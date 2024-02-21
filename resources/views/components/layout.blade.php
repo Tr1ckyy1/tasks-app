@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-    <title>Document</title>
+    @vite('resources/css/app.css')
+    <title>Task Manager</title>
 </head>
 <body>
-    <h1 class="text-red-500">helo</h1>
+    @auth
+    <form method="POST" action="/logout">
+        @csrf
+
+        <button type="submit">Subm</button>
+    </form>
+    @else
+    {{$slot}}
+
+    @endauth
 </body>
 </html>
