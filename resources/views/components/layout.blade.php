@@ -11,7 +11,7 @@
         @vite('resources/css/app.css')
         
     </head>
-    <body {{$attributes(['class' => 'px-10 py-6 flex'])}} >
+    <body {{$attributes(['class' => 'items-center gap-14  px-10 py-6 flex h-screen'])}} >
         <x-sidebar/>
         {{$slot}}
     </body>

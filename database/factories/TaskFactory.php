@@ -14,10 +14,14 @@ class TaskFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+     
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->sentence,
+            'description' => $this->faker->paragraph(),
+            'due_date' => $this->faker->dateTime()
         ];
     }
 }
