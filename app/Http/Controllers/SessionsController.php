@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
@@ -11,11 +12,9 @@ class SessionsController extends Controller
         return view('sessions.create');
     }
     
-    public function store(){
-        $attributes = request()->validate([
-            'email' => ['required'],
-            'password' => 'required'
-        ]);
+    public function store(StoreLoginRequest $request){
+
+        $attributes = $request->validated();
 
         if(!auth()->attempt($attributes)){
             throw ValidationException::withMessages(['email' => "Your credentials don't match"]);

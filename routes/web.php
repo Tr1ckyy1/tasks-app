@@ -19,12 +19,8 @@ Route::get("/login",[SessionsController::class,'create'])->middleware('guest');
 Route::post("/login",[SessionsController::class,'store'])->middleware('guest');
 Route::post("/logout",[SessionsController::class,'destroy'])->middleware('auth');
 
-// Logout, FOR NOW
-Route::get("/",function(){
-    return view("sessions.create");
-});
 
-// Route::middleware('auth')->group(function(){
-//     Route::get('/',[TaskController::class,'index']);
-//     Route::get('/tasks{task:slug}',[TaskController::class,'show']);
-// });
+Route::middleware('auth')->group(function(){
+    Route::get('/',[TaskController::class,'index']);
+    // Route::get('/tasks{task:slug}',[TaskController::class,'show']);
+});
