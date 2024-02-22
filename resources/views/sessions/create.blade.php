@@ -8,8 +8,21 @@
                 <img src="{{asset('images/intersect.png')}}" alt="" class="rounded-xl h-full"/>
             </div>
             
+            {{-- 
+                
+                <div x-data='{show: false}' @click.away="show = false" class="relative">
+    {{-- TRIGGER --}}
+    {{-- <div @click="show = !show">
+        {{ $trigger }}
+    </div>
 
-            <div class="space-y-10 flex-1">
+    {{-- Links --}}
+    {{-- <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl w-32 z-50 overflow-auto max-h-52" style="display:none"> --}}
+        {{-- {{ $slot }} --}}
+    {{-- </div> --}} 
+{{-- </div>--}} 
+
+            <div class="space-y-10 flex-1" x-data="{show: false}">
                 <div class="flex gap-20 h-full items-center justify-between">
                     <div>
                         <h1 class="tracking-wide font-bold text-2xl">{{strtoupper('welcome back!')}}</h1>
@@ -17,7 +30,9 @@
                     </div>
                     <img src="{{asset('images/smile.png')}}" alt="" class="rounded-xl h-full"/>
                 </div>
-                <input type="email" name="email" class="bg-[#F6F8FA] text-sm text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring focus:ring-[#499AF9] placeholder:text-[#586069] " type="text" placeholder="E-mail" required/>
+                
+                <x-form.input name="email" placeholder="E-mail" />
+
                 <div class="relative">
 
                     {{-- TAKE CARE LATER --}}
@@ -26,9 +41,11 @@
 
                     
                     {{-- <x-eye class="absolute right-6 top-1/2 -translate-y-1/2"/> --}}
+                    {{-- <x-eye-cover class="absolute right-6 top-1/2 -translate-y-1/2"/> --}}
                         
 
-                    <input id="password" name="password" type="password" class="bg-[#F6F8FA] text-sm text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring focus:ring-[#499AF9] placeholder:text-[#959DA5]" type="text" placeholder="Write your password" required/>
+                    {{-- <input id="password" name="password" type="password" class="bg-[#F6F8FA] text-sm text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring focus:ring-[#499AF9] placeholder:text-[#959DA5]" type="text" placeholder="Write your password" required/> --}}
+                    <x-form.input name='password' placeholder="Write your password"     />
                 </div>
 
                 <button class="outline-none bg-[#499AF9] w-full rounded-2xl p-5 text-white font-bold text-lg hover:bg-[#3386E7] duration-100">
