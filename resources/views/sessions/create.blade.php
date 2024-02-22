@@ -1,6 +1,16 @@
 @guest
-    
-<x-layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+
+</head>
+<body class="px-10 py-6">
     <section class="h-1/3 max-w-screen-lg mx-auto py-10 space-y-2">
         <h1 class="text-gray-400">Log in</h1>
         <form class="flex h-full items-center gap-20 px-10 py-5" method="POST" action="/login">
@@ -45,5 +55,9 @@
 
         </form>
     </section>
-</x-layout>
+</body>
+</html>
+
+  
+
 @endguest
