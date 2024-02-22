@@ -22,5 +22,7 @@ Route::post("/logout",[SessionsController::class,'destroy'])->middleware('auth')
 
 Route::middleware('auth')->group(function(){
     Route::get('/',[TaskController::class,'index']);
-    // Route::get('/tasks{task:slug}',[TaskController::class,'show']);
+    Route::get('/tasks/{task}}',[TaskController::class,'show']);
+    Route::delete('/delete/{task}',[TaskController::class,'destroy']);
+
 });

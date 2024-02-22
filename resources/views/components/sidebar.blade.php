@@ -1,4 +1,4 @@
-<aside class="h-screen bg-[#F6F8FA] w-44 rounded-2xl flex flex-col items-center py-8 justify-between">
+<aside class="h-full bg-[#F6F8FA] w-44 rounded-2xl flex flex-col items-center py-8 justify-between">
     <section class="flex flex-col items-center gap-20">
 
         <header>
