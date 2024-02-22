@@ -43,7 +43,6 @@
                 
             </div>
 
-            
         </form>
     </section>
 </x-layout>
