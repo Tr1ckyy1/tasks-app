@@ -24,7 +24,8 @@
             </table>
             
         </main>
-        <footer>
+        <footer class="mt-10">
+            {{$tasks->links ()}}
         </footer>
         @else
     
