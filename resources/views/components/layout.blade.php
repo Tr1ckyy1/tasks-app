@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 
 </head>
-<body>
+<body class="px-10 py-6 ">
    {{$slot}}
 </body>
 </html>
