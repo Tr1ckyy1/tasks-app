@@ -12,7 +12,7 @@
                     </div>
                 </x-list>
 
-                <x-list name="Due tasks">
+                <x-list link="/overdue-tasks" name="Due tasks">
                     <div class="w-8">
                         <x-icons.due-tasks-icon />
                     </div>
