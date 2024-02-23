@@ -27,17 +27,37 @@
         <footer class="mt-10">
             {{$tasks->links ()}}
         </footer>
+        
+        @elseif(request()->is('overdue-tasks')) 
+
+        <header class="flex justify-between w-full">
+            <h1 class="font-bold uppercase text-3xl max-w-[70%] text-[#E91818]">
+                you have no overdue tasks left 
+            </h1>
+
+            <div class="flex gap-4">
+            
+                <a href="/" 
+                   class="max-h-[50px] inline-flex uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 hover:bg-[#f6faff]">
+                   back to all tasks
+                 </a>             
+                <x-add-tasks-link/>
+
+            </div>
+
+        </header> 
+
+
         @else
     
             <header class="flex justify-between w-full">
                 <h1 class="font-bold uppercase text-3xl max-w-[80%]">
-                    you have no tasks
+                    you have no tasks 
                 </h1>
-                    <a href="" class="py-3 uppercase bg-[#499AF9] text-white rounded-xl  font-bold flex px-6 items-center justify-center gap-3 hover:brightness-95 duration-100">
-                        <span class="w-[26px] h-[26px] rounded-full border-2  border-white flex justify-center items-center text-xl font-bold">+</span> add task
-                    </a>
+                    <x-add-tasks-link/>
                 </div>
             </header>
+
         @endif
     </section>
 </x-layout>
