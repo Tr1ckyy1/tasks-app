@@ -12,7 +12,7 @@
                 <h1 class="text-[#6A737D]">
                     Created date
                 </h1>
-                <p class="{{ strtotime($task->created_at) < strtotime('today') ? 'text-red-500' : '' }}">{{ date("j/m/y",strtotime($task->created_at)) }}</p>
+                <p>{{ date("j/m/y",strtotime($task->created_at)) }}</p>
 
             </div>
             <div>
