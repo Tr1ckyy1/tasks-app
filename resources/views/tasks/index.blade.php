@@ -3,13 +3,25 @@
         @if ($tasks->count())
         <x-tasks-header/>
         <main class="mt-10">
-            <table class="w-full overflow-hidden ">
+            <table class="w-full overflow-hidden">
                 <thead class="border-b">
                     <tr>
                         <th class="py-3 pb-6 font-normal text-left">Task Name</th>
                         <th class="py-3 pb-6 font-normal text-left pl-10">Description</th>
-                        <th class="py-3 pb-6 font-normal text-left pl-10">Created at</th>
-                        <th class="py-3 pb-6 font-normal text-left">Due Date</th>
+                        
+                        <th class="py-3 pb-6 font-normal text-left pl-10">
+                            <div class="flex items-center gap-2">
+                                <span>Created at</span>
+                                <x-icons.up-down-arrow-icon/>
+                            </div>
+                        </th>
+                        <th class="py-3 pb-6 font-normal text-left">
+                            <div class="flex items-center gap-2">
+                                <span>Due Date</span>
+                                <x-icons.up-down-arrow-icon/>
+                            </div>
+                        </th>
+                        
                         <th class="py-3 pb-6 font-normal text-left">Actions</th>
                     </tr>
                 </thead>
@@ -32,7 +44,7 @@
 
         <header class="flex justify-between w-full">
             <h1 class="font-bold uppercase text-3xl max-w-[70%] text-[#E91818]">
-                you have no overdue tasks left 
+                you have no overdue tasks
             </h1>
 
             <div class="flex gap-4">
