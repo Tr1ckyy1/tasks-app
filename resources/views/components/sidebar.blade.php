@@ -12,7 +12,7 @@
                     </div>
                 </x-list>
 
-                <x-list link="/overdue-tasks" name="Due tasks">
+                <x-list :link="route('tasks.index', ['overdue' => 'show'])" name="Due tasks">
                     <div class="w-8">
                         <x-icons.due-tasks-icon />
                     </div>

@@ -15,15 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/login",[SessionsController::class,'create'])->middleware('guest');
+Route::get("/",[SessionsController::class,'create'])->middleware('guest');
 Route::post("/login",[SessionsController::class,'store'])->middleware('guest');
 Route::post("/logout",[SessionsController::class,'destroy'])->middleware('auth');
 
 
-Route::middleware('auth')->group(function(){
-    Route::get('/',[TaskController::class,'index']);
-    Route::get('/overdue-tasks',[TaskController::class,'index']);
-    Route::get('/tasks/{task}}',[TaskController::class,'show']);
+Route::middleware('auth')->prefix('/tasks')->group(function(){
+    Route::get('',[TaskController::class,'index'])->name("tasks.index");
+    Route::get('/{task}',[TaskController::class,'show']);
     Route::delete('/delete/{task}',[TaskController::class,'destroy']);
-
 });

@@ -22,11 +22,11 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect('/');
+        return redirect('/tasks');
     }
 
     public function destroy(){
         auth()->logout();
-        return redirect('/login');
+        return redirect('/');
     }
 }
