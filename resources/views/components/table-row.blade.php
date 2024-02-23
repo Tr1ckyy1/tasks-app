@@ -3,8 +3,7 @@
     <td class="text-[#6A737D]  py-4 whitespace-nowrap max-w-[250px] overflow-x-hidden">{{ $task->name}}</td>
     <td class="text-[#6A737D]  pl-10 whitespace-nowrap py-4 max-w-[250px] overflow-hidden">{{ $task->description }}</td>
     <td 
-    class="{{ strtotime($task->created_at) < strtotime('today') ? 'text-red-500' : 'text-[#6A737D]' }} 
-    pl-10 py-4">{{ date("j/m/Y",strtotime($task->created_at)) }}</td>
+    class="text-[#6A737D] pl-10 py-4">{{ date("j/m/Y",strtotime($task->created_at)) }}</td>
     <td 
     class="{{ strtotime($task->due_date) < strtotime('today') ? 'text-red-500' : 'text-[#6A737D]' }} 
     py-4">{{ date("d/m/Y",strtotime($task->due_date)) }}</td>

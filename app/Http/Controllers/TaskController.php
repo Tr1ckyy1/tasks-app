@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     public function index(){
-        return view("tasks.index", ['tasks' =>  Task::latest()->paginate(8)]);
+        $tasks = Task::latest()->paginate(8);
+        if($tasks->isEmpty() && $tasks->currentPage() > 1){
+            return redirect("/?page=" . $tasks->lastPage());
+        }
+        return view("tasks.index", ['tasks' =>  $tasks]);
     }
 
     public function show(Task $task){
