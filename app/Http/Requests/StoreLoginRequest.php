@@ -25,7 +25,6 @@ class StoreLoginRequest extends FormRequest
         return [
             'email' => ['required','email',Rule::exists('users','email')],
             'password' => ['required','min:4']
-            // Rule::exists('users','email')
         ];
     }
 }
