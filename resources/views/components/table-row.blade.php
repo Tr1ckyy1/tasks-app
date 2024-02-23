@@ -8,15 +8,14 @@
     class="{{ strtotime($task->due_date) < strtotime('today') ? 'text-red-500' : 'text-[#6A737D]' }} 
     py-4">{{ date("d/m/Y",strtotime($task->due_date)) }}</td>
     <td class="flex gap-6 text-[#6A737D] py-4">
-        <form method="POST" action="/delete/{{$task->id}}">
+        <form method="POST" action="/tasks/{{$task->id}}">
             @csrf
             @method('DELETE')
             
             <button class="hover:underline">Delete</button>
         </form>
-        <a  href="/" class="hover:underline">Edit</a>
+        <a  href="#" class="hover:underline">Edit</a>
         <a  href="/tasks/{{$task->id}}}" class="hover:underline">Show</a>
     </td>
 </tr>
-
 
