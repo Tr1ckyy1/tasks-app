@@ -24,12 +24,15 @@ class TaskController extends Controller
 
     public function show(Task $task){
         return view("tasks.show",["task" => $task]);
+    }  
+
+    public function destroyAll(){
+       Task::where('due_date','<', now()->format("Y-m-d"))->delete();
+       return back();
     }
 
     public function destroy(Task $task){
         $task->delete();
-
         return back();
     }
-
 }

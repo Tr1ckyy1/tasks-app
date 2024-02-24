@@ -10,7 +10,10 @@
         </a>
     @else
         <div class="flex gap-4">
-            <form action="/delete">
+            <form method="post" action="/tasks/delete-overdue">
+                @csrf
+                @method("DELETE")
+
                 <button type="submit" 
                 class="uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 hover:bg-[#f6faff]">
                      delete old tasks
