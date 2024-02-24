@@ -23,6 +23,6 @@ Route::post("/logout",[SessionsController::class,'logout'])->middleware('auth')-
 Route::middleware('auth')->prefix('/tasks')->group(function(){
     Route::get('',[TaskController::class,'index'])->name("tasks.index");
     Route::get('/{task}',[TaskController::class,'show'])->name("tasks.show");
-    Route::delete('/delete_overdue',[TaskController::class,'destroy_all'])->name("tasks.destroy_all");
+    Route::delete('/delete-overdue',[TaskController::class,'destroyAll'])->name("tasks.destroy_all");
     Route::delete('/{task}',[TaskController::class,'destroy'])->name("tasks.destroy");
 });
