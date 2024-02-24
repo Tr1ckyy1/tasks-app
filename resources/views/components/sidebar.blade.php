@@ -6,7 +6,7 @@
         </header>
         <main>
             <ul class="space-y-4">
-                <x-list name="My tasks">
+                <x-list :link="route('tasks.index')" name="My tasks">
                     <div class="w-8">
                         <x-icons.my-tasks-icon />
                     </div>
@@ -29,7 +29,7 @@
     </section>
     
     <footer>
-        <form method="POST" action="/logout">
+        <form method="POST" action="{{route('sessions.logout')}}">
             @csrf
 
             <button type="submit" class="flex items-center gap-3 hover:underline"> <x-icons.logout-icon class="w-5"/>Log out</button>

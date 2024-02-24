@@ -6,7 +6,7 @@
                     No overdue tasks
                 </h1>
                 <div class="flex gap-4">
-                    <a href="/tasks" class="max-h-[50px] inline-flex uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 hover:bg-[#f6faff]">
+                    <a href="{{ route('tasks.index') }}" class="max-h-[50px] inline-flex uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 hover:bg-[#f6faff]">
                         Back to all tasks
                     </a>             
                     <x-add-tasks-link/>
