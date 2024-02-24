@@ -17,15 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/",function(){
-    if(!auth()->id()) return redirect("/login");
-    return redirect('/tasks');
-});
-
 Route::get('/localization/{locale}',LocalizationController::class)->name('localization');
 
 Route::middleware(Localization::class)->group(function(){
-    Route::get("/login",[SessionsController::class,'create'])->middleware('guest')->name('sessions.create');
+    Route::get("/",[SessionsController::class,'create'])->middleware('guest')->name('sessions.create');
     Route::post("/login",[SessionsController::class,'login'])->middleware('guest')->name('sessions.login');
     Route::post("/logout",[SessionsController::class,'logout'])->middleware('auth')->name('sessions.logout');
 
