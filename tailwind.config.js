@@ -11,6 +11,12 @@ export default {
             height: {
                 screen: "100dvh",
             },
+            colors: {
+                "main-grey": "#F6F8FA",
+                "main-red": "#E91818",
+                "main-blue": "#499AF9",
+                "secondary-grey": "#6A737D",
+            },
         },
     },
     plugins: [],

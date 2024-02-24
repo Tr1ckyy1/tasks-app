@@ -17,7 +17,7 @@ class SessionsController extends Controller
         $attributes = $request->validated();
 
         if(!auth()->attempt($attributes)){
-            throw ValidationException::withMessages(['email' => "Your credentials don't match"]);
+            throw ValidationException::withMessages(['email' => __('validation.credentials_dont_match')]);
         }
 
         session()->regenerate();
