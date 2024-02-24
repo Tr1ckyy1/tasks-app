@@ -12,7 +12,7 @@
 </head>
 <body>
     <section class="h-screen max-w-screen-lg mx-auto py-10 space-y-2 ">
-        <form class="flex h-full items-center gap-20 px-10 py-5" method="POST" action="/login">
+        <form class="flex h-full items-center gap-20 px-10 py-5" method="POST" action="{{ route('sessions.login') }}">
             @csrf
             
             <div class="flex-1">

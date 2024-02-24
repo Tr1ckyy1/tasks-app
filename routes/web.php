@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/",[SessionsController::class,'create'])->middleware('guest')->name('sessions.create');
-Route::post("/login",[SessionsController::class,'store'])->middleware('guest')->name('sessions.store');
-Route::post("/logout",[SessionsController::class,'destroy'])->middleware('auth')->name('sessions.   destroy');
+Route::post("/login",[SessionsController::class,'login'])->middleware('guest')->name('sessions.login');
+Route::post("/logout",[SessionsController::class,'logout'])->middleware('auth')->name('sessions.logout');
 
 
 Route::middleware('auth')->prefix('/tasks')->group(function(){
     Route::get('',[TaskController::class,'index'])->name("tasks.index");
     Route::get('/{task}',[TaskController::class,'show'])->name("tasks.show");
+    Route::delete('/delete-overdue',[TaskController::class,'destroyAll'])->name("tasks.destroy_all");
     Route::delete('/{task}',[TaskController::class,'destroy'])->name("tasks.destroy");
 });

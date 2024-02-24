@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Task::factory(16)->create();
+        Task::factory(16)->create(['user_id' => User::factory()->create(['email' => 'test@com','password' => bcrypt("pass")])]);
     }
 }
