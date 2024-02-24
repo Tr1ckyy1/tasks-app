@@ -15,8 +15,8 @@
         <x-sidebar/>
         {{$slot}}
         <div class="absolute bottom-6 right-10 flex gap-5 justify-center align-bottom">
-            <x-button-en/>
-            <x-button-ka/>
+            <x-link-en/>
+            <x-link-ka/>
         </div>
     </body>
     </html>

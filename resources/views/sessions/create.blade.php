@@ -50,8 +50,8 @@
                 </form>
 
                 <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-5 justify-center align-bottom">
-                    <x-button-en/>
-                    <x-button-ka/>
+                    <x-link-en/>
+                    <x-link-ka/>
                 </div>
             </div>
         </div>
