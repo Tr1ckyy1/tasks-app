@@ -50,8 +50,8 @@
                 </form>
 
                 <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-5 justify-center align-bottom">
-                    <button class="py-3 px-4 outline-none rounded-xl hover:bg-[#F6F8FA]">English</button>
-                    <button class="py-3 px-4 outline-none rounded-xl hover:bg-[#F6F8FA]">ქართული</button>
+                    <x-button-en/>
+                    <x-button-ka/>
                 </div>
             </div>
         </div>

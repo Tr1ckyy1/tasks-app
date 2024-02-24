@@ -15,8 +15,8 @@
         <x-sidebar/>
         {{$slot}}
         <div class="absolute bottom-6 right-10 flex gap-5 justify-center align-bottom">
-            <button class="py-3 px-4 outline-none rounded-xl hover:bg-[#F6F8FA]">English</button>
-            <button class="py-3 px-4 outline-none rounded-xl hover:bg-[#F6F8FA]">ქართული</button>
+            <x-button-en/>
+            <x-button-ka/>
         </div>
     </body>
     </html>
