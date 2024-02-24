@@ -6,7 +6,7 @@
     </h1>
     
     @if($task ?? null)
-        <a href="" class="max-h-[50px] uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 flex gap-4 items-center hover:bg-[#f6faff]">
+        <a href="" class="max-h-[50px] uppercase border border-main-blue py-3 px-6 rounded-xl text-main-blue font-bold duration-100 flex gap-4 items-center hover:bg-[#f6faff]">
            <x-icons.edit-icon color="#499AF9" class=""/> {{__('tasks.edit_link')}}
         </a>
     @else
@@ -16,7 +16,7 @@
                 @method("DELETE")
 
                 <button type="submit" 
-                class="uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 hover:bg-[#f6faff]">
+                class="uppercase border border-main-blue py-3 px-6 rounded-xl text-main-blue font-bold duration-100 hover:bg-[#f6faff]">
                      {{__('tasks.delete_old_tasks')}}
                 </button>
             </form>

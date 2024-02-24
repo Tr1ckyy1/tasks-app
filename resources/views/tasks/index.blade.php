@@ -2,11 +2,11 @@
     <section class="w-full h-[650px]">
         @if(request('overdue') && $tasks->isEmpty())
             <header class="flex justify-between w-full">
-                <h1 class="font-bold uppercase text-3xl max-w-[70%] text-[#E91818]">
+                <h1 class="font-bold uppercase text-3xl max-w-[70%] text-main-red">
                     {{__('tasks.no_overdue_tasks_text')}}
                 </h1>
                 <div class="flex gap-4">
-                    <a href="{{ route('tasks.index') }}" class="max-h-[50px] inline-flex uppercase border border-[#499AF9] py-3 px-6 rounded-xl text-[#499AF9] font-bold duration-100 hover:bg-[#f6faff]">
+                    <a href="{{ route('tasks.index') }}" class="max-h-[50px] inline-flex uppercase border border-main-blue py-3 px-6 rounded-xl text-main-blue font-bold duration-100 hover:bg-[#f6faff]">
                         {{__('tasks.back_to_all_tasks')}}
                     </a>             
                     <x-add-tasks-link/>
