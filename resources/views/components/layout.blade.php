@@ -14,7 +14,10 @@
     <body {{$attributes(['class' => 'items-center gap-14  px-10 py-6 flex h-screen'])}} >
         <x-sidebar/>
         {{$slot}}
+        <div class="absolute bottom-6 right-10 flex gap-5 justify-center align-bottom">
+            <button class="py-3 px-4 outline-none rounded-xl hover:bg-[#F6F8FA]">English</button>
+            <button class="py-3 px-4 outline-none rounded-xl hover:bg-[#F6F8FA]">ქართული</button>
+        </div>
     </body>
     </html>
-
 @endauth
