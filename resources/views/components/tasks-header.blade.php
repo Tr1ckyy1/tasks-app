@@ -1,7 +1,6 @@
 @props(['task'])
 <header class="flex justify-between w-full">
     <h1 class="font-bold uppercase text-3xl max-w-[80%]">
-        {{-- TASK NAME for later, when we have both Geo and En data of the title --}}
         {{$task->name ?? __('tasks.your_tasks_text')}}
     </h1>
     

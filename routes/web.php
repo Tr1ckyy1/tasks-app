@@ -27,6 +27,8 @@ Route::middleware(Localization::class)->group(function(){
 
     Route::middleware('auth')->prefix('/tasks')->group(function(){
         Route::get('',[TaskController::class,'index'])->name("tasks.index");
+        Route::get('/create',[TaskController::class,'create'])->name("tasks.create");
+        Route::post('',[TaskController::class,'store'])->name("tasks.store");
         Route::get('/{task}',[TaskController::class,'show'])->name("tasks.show");
         Route::delete('/delete-overdue',[TaskController::class,'destroyAll'])->name("tasks.destroy_all");
         Route::delete('/{task}',[TaskController::class,'destroy'])->name("tasks.destroy");

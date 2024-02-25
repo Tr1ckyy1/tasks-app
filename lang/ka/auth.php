@@ -19,9 +19,9 @@ return [
         'login' => [
         'title' => 'კეთილი იყოს თქვენი დაბრუნება!',
         'details' => 'გთხოვთ შეიყვანოთ დეტალები',
-        'email' => 'იმეილი',
+        'email' => 'მეილი',
         'password' => 'პაროლი',
-        'email_placeholder' => 'შეიყვანეთ თქვენი იმეილი',
+        'email_placeholder' => 'შეიყვანეთ თქვენი მეილი',
         'password_placeholder' => 'შეიყვანეთ თქვენი პაროლი',
         'button' => 'შესვლა'
     ]
