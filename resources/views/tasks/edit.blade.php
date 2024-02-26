@@ -8,11 +8,11 @@
             @csrf
             @method('PATCH')
 
-            <x-form.input name="name[en]" type="text" :text="__('tasks.name_label_en')" :create="true" :value="old(str_replace(['[', ']'], ['.',''], 'name[en]'),$task->getTranslation('name','en'))" required/>
-            <x-form.input name="name[ka]" type="text" :text=" __('tasks.name_label_ka')" :create="true" :value="old(str_replace(['[', ']'], ['.',''], 'name[ka]'),$task->getTranslation('name','ka'))" required/>
+            <x-form.input name="name[en]" type="text" :text="__('tasks.name_label_en')" :create="true" :value="old('name.en',$task->getTranslation('name','en'))" required/>
+            <x-form.input name="name[ka]" type="text" :text=" __('tasks.name_label_ka')" :create="true" :value="old('name.ka',$task->getTranslation('name','ka'))" required/>
 
-            <x-form.textarea name="description[en]" :text="__('tasks.description_label_en')">{{old(str_replace(['[', ']'], ['.',''], 'description[en]'),$task->getTranslation('description','en'))}}</x-form.textarea>
-            <x-form.textarea name="description[ka]" :text="__('tasks.description_label_ka')">{{old(str_replace(['[', ']'], ['.',''], 'description[ka]'),$task->getTranslation('description','ka'))}}</x-form.textarea>
+            <x-form.textarea name="description[en]" :text="__('tasks.description_label_en')">{{old('description.en',$task->getTranslation('description','en'))}}</x-form.textarea>
+            <x-form.textarea name="description[ka]" :text="__('tasks.description_label_ka')">{{old('description.ka',$task->getTranslation('description','ka'))}}</x-form.textarea>
 
             <x-form.input name="due_date" type="date" :text="__('tasks.due_date')" :value="$task->due_date" required/>
 
@@ -21,5 +21,3 @@
         
     </section>
 </x-layout>
-
-str_replace(['[', ']'], ['.', ''], $name)
