@@ -1,4 +1,8 @@
 @props(['name','text','create' => false])    
+@php
+    $dotNotation = str_replace(['[', ']'], ['.', ''], $name)
+@endphp
+
     <div class="relative">
         <input 
         class="peer bg-main-grey  text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring  focus:ring-main-blue placeholder:text-[#586069]
@@ -8,7 +12,7 @@
         name="{{$name}}" 
         id="{{$name}}" 
         placeholder=""
-        {{$attributes(['value' => old($name)])}} 
+        {{$attributes(['value' => old($dotNotation)])}} 
         />    
         <label 
         for="{{$name}}" 
@@ -16,7 +20,7 @@
         >{{$text}}</label>
     </div>
 
-    @error($name)
+    @error($dotNotation)
         <p class="text-main-red mt-2 text-xs">
             {{$message}}
         </p>   

@@ -28,20 +28,7 @@ class TaskController extends Controller
     }
     
     public function store(StoreTaskRequest $request){
-        $attributes = $request->validated();
-        Task::create(
-            [
-                'name' => [
-                    'en' => $attributes['name_en'],
-                    'ka' => $attributes['name_ka'],
-                ],
-                'description' => [
-                    'en' => $attributes['description_en'],
-                    'ka' => $attributes['description_ka'],
-                ],
-                'due_date' => $attributes['date'],
-                'user_id' => auth()->id()
-            ]);
+        Task::create([...$request->validated(),'user_id' => auth()->id()]);
             
         return redirect(route('tasks.index'));
     }
@@ -55,20 +42,7 @@ class TaskController extends Controller
     }
 
     public function update(StoreTaskRequest $request,Task $task){
-        $attributes = $request->validated();
-
-        $task->update([
-            'name' => [
-                'en' => $attributes['name_en'],
-                'ka' => $attributes['name_ka'],
-            ],
-            'description' => [
-                'en' => $attributes['description_en'],
-                'ka' => $attributes['description_ka'],
-            ],
-            'due_date' => $attributes['date'],
-            'user_id' => auth()->id()
-        ]);
+        $task->update($request->validated());
 
         return redirect(route('tasks.index'));
     }

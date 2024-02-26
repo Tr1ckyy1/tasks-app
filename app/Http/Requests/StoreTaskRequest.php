@@ -22,11 +22,11 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name_en' => ['required','min:6','max:255','regex:/^[A-Za-z\s,.$!%@]+$/'],
-            'name_ka' => ['required','min:6','max:255','regex:/^[ა-ჰ\s,.$!%@]+$/'],
-            'description_en' => ['required','min:10','max:255','regex:/^[A-Za-z\s,.$!%@]+$/'],
-            'description_ka' => ['required','min:10','max:255','regex:/^[ა-ჰ\s,.$!%@]+$/'],
-            'date' => ['required','date'],
+            'name.en' => ['required','min:6','max:255','regex:/^[A-Za-z\s,.()$!%@]+$/'],
+            'name.ka' => ['required','min:6','max:255','regex:/^[ა-ჰ\s,.()$!%@]+$/'],
+            'description.en' => ['required','min:10','max:255','regex:/^[A-Za-z\s,.()$!%@]+$/'],
+            'description.ka' => ['required','min:10','max:255','regex:/^[ა-ჰ\s,.()$!%@]+$/'],
+            'due_date' => ['required','date'],
         ];
     }
 
@@ -34,10 +34,10 @@ class StoreTaskRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name_en.regex' => __('validation.regex.name_en'),
-            'name_ka.regex' => __('validation.regex.name_ka'),
-            'description_en.regex' => __('validation.regex.description_en'),
-            'description_ka.regex' => __('validation.regex.description_ka'),
+            'name.en.regex' => __('validation.regex.name_en'),
+            'name.ka.regex' => __('validation.regex.name_ka'),
+            'description.en.regex' => __('validation.regex.description_en'),
+            'description.ka.regex' => __('validation.regex.description_ka'),
         ];
     }
 }
