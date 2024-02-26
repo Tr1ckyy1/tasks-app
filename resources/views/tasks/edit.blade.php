@@ -8,15 +8,15 @@
             @csrf
             @method('PATCH')
 
-            <x-form.input name="name[en]" type="text" :text="__('tasks.name_label_en')" :create="true" :value="old('name.en',$task->getTranslation('name','en'))" required/>
-            <x-form.input name="name[ka]" type="text" :text=" __('tasks.name_label_ka')" :create="true" :value="old('name.ka',$task->getTranslation('name','ka'))" required/>
+            <x-form.input dotNotation="name.en" name="name[en]" type="text" :text="__('tasks.name_label_en')" :create="true" :value="old('name.en',$task->getTranslation('name','en'))" required/>
+            <x-form.input dotNotation="name.ka" name="name[ka]" type="text" :text=" __('tasks.name_label_ka')" :create="true" :value="old('name.ka',$task->getTranslation('name','ka'))" required/>
 
-            <x-form.textarea name="description[en]" :text="__('tasks.description_label_en')">{{old('description.en',$task->getTranslation('description','en'))}}</x-form.textarea>
-            <x-form.textarea name="description[ka]" :text="__('tasks.description_label_ka')">{{old('description.ka',$task->getTranslation('description','ka'))}}</x-form.textarea>
+            <x-form.textarea dotNotation="description.en" name="description[en]" :text="__('tasks.description_label_en')">{{old('description.en',$task->getTranslation('description','en'))}}</x-form.textarea>
+            <x-form.textarea dotNotation="description.ka" name="description[ka]" :text="__('tasks.description_label_ka')">{{old('description.ka',$task->getTranslation('description','ka'))}}</x-form.textarea>
 
-            <x-form.input name="due_date" type="date" :text="__('tasks.due_date')" :value="$task->due_date" required/>
+            <x-form.input dotNotation="due_date" name="due_date" type="date" :text="__('tasks.due_date')" :value="$task->due_date" required/>
 
-            <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100">{{__('tasks.edit')}}</button>
+            <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100 outline-none">{{__('tasks.edit')}}</button>
     </form>
         
     </section>

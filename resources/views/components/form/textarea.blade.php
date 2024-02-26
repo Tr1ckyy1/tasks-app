@@ -1,7 +1,4 @@
-@props(['name','text'])
-@php
-    $dotNotation = str_replace(['[', ']'], ['.', ''], $name)
-@endphp
+@props(['name','text','dotNotation'])
 
 <div class="relative">
     <textarea 
