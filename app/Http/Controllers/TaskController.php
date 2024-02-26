@@ -4,17 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
+use App\Models\User;
 
 class TaskController extends Controller
 {
     public function index(){
-        $tasksQuery = Task::query();
+        $tasksQuery = User::find(auth()->id())->tasks();
+
+        $sortCreated = request('sortCreated');
+        $sortDue = request('sortDue');
         
-         if (request('overdue')) {
+        if($sortCreated){
+            if($sortCreated === 'asc') $tasksQuery->oldest();
+            elseif($sortCreated === 'desc') $tasksQuery->latest();
+        }
+
+        if($sortDue){
+            if($sortDue === 'asc') $tasksQuery->oldest('due_date');
+            elseif($sortDue === 'desc') $tasksQuery->latest('due_date');
+        }
+        
+        if (request('overdue')) {
             $tasksQuery->where('due_date', '<', now()->format("Y-m-d"));
         }
 
-        $tasks = $tasksQuery->paginate(8)->withQueryString();
+        $tasks = $tasksQuery->latest()->paginate(8)->withQueryString();
 
         if ($tasks->isEmpty() && $tasks->currentPage() > 1) {
             return redirect($tasks->previousPageUrl());

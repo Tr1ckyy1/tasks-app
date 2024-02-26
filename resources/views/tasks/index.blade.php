@@ -24,13 +24,17 @@
                             <th class="py-3 pb-6 font-normal text-left pl-10">
                                 <div class="flex items-center gap-2">
                                     <span>{{ __('tasks.created_at') }}</span>
-                                    <x-icons.up-down-arrow-icon/>
+                                    <a href="{{ route('tasks.index', array_merge(request()->except(['sortCreated', 'sortDue']), ['sortCreated' => request('sortCreated') === 'asc' ? 'desc' : 'asc'])) }}">
+                                        <x-icons.up-down-arrow-icon/>
+                                    </a>                                    
                                 </div>
                             </th>
                             <th class="py-3 pb-6 font-normal text-left">
                                 <div class="flex items-center gap-2">
                                     <span>{{ __('tasks.due_date') }}</span>
-                                    <x-icons.up-down-arrow-icon/>
+                                    <a href="{{ route('tasks.index', array_merge(request()->except(['sortCreated', 'sortDue']), ['sortDue' => request('sortDue') === 'asc' ? 'desc' : 'asc'])) }}">
+                                        <x-icons.up-down-arrow-icon/>
+                                    </a>                                    
                                 </div>
                             </th>
                             
@@ -49,9 +53,9 @@
                 
             </main>
             <footer class="mt-10">
-                {{$tasks->links ()}}
+                {{$tasks->links()}}
             </footer>
-
+            
         @else
     
             <header class="flex justify-between w-full">
