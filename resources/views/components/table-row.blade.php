@@ -14,7 +14,7 @@
             
             <button class="hover:underline">{{ __("tasks.delete_link") }}</button>
         </form>
-        <a  href="#" class="hover:underline">{{ __("tasks.edit_link") }}</a>
+        <a  href="{{ route('tasks.edit', ['task' => $task->id])}}" class="hover:underline">{{ __("tasks.edit_link") }}</a>
         <a  href="{{ route('tasks.show', ['task' => $task->id]) }}" class="hover:underline">{{ __("tasks.show_link") }}</a>
     </td>
 </tr>

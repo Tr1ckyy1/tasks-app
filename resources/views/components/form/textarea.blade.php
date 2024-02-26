@@ -9,7 +9,7 @@
     name="{{$name}}" 
     id="{{$name}}" 
     {{$attributes}} 
-    >{{old($name)}}</textarea>
+    >{{$slot ?? old($name)}}</textarea>
     <label 
     for="{{$name}}" 
     class="absolute left-6 duration-200 leading-5 text-[#959DA5] text-sm top-2 peer-placeholder-shown:peer-focus:text-sm peer-placeholder-shown:peer-focus:text-[#959DA5] peer-placeholder-shown:peer-focus:top-2 peer-placeholder-shown:text-[#586069] peer-placeholder-shown:top-7 peer-placeholder-shown:text-base"

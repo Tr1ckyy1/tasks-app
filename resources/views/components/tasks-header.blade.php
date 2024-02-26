@@ -5,7 +5,7 @@
     </h1>
     
     @if($task ?? null)
-        <a href="" class="max-h-[50px] uppercase border border-main-blue py-3 px-6 rounded-xl text-main-blue font-bold duration-100 flex gap-4 items-center hover:bg-[#f6faff]">
+        <a href="{{route('tasks.edit', ['task' => $task])}}" class="max-h-[50px] uppercase border border-main-blue py-3 px-6 rounded-xl text-main-blue font-bold duration-100 flex gap-4 items-center hover:bg-[#f6faff]">
            <x-icons.edit-icon color="#499AF9" class=""/> {{__('tasks.edit_link')}}
         </a>
     @else

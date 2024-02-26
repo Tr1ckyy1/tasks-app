@@ -50,6 +50,29 @@ class TaskController extends Controller
         return view("tasks.show",["task" => $task]);
     }  
     
+    public function edit(Task $task){
+        return view("tasks.edit", ['task' => $task]);
+    }
+
+    public function update(StoreTaskRequest $request,Task $task){
+        $attributes = $request->validated();
+
+        $task->update([
+            'name' => [
+                'en' => $attributes['name_en'],
+                'ka' => $attributes['name_ka'],
+            ],
+            'description' => [
+                'en' => $attributes['description_en'],
+                'ka' => $attributes['description_ka'],
+            ],
+            'due_date' => $attributes['date'],
+            'user_id' => auth()->id()
+        ]);
+
+        return redirect('/tasks');
+    }
+    
     public function destroyAll(){
        Task::where('due_date','<', now()->format("Y-m-d"))->delete();
        return back();

@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="w-1/3 mx-auto space-y-4 ">
+    <section class="w-1/3 mx-auto space-y-4 h-full">
         <h1 class="font-bold uppercase text-3xl text-center">
             {{((__('tasks.create')))}}
         </h1>

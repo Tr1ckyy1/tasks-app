@@ -5,11 +5,10 @@
         @error($name)
         ring ring-main-red
         @enderror" 
-        value="{{old($name)}}" 
         name="{{$name}}" 
         id="{{$name}}" 
         placeholder=""
-        {{$attributes}} 
+        {{$attributes(['value' => old($name)])}} 
         />    
         <label 
         for="{{$name}}" 
