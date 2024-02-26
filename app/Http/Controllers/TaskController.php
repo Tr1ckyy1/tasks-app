@@ -28,7 +28,6 @@ class TaskController extends Controller
     }
     
     public function store(StoreTaskRequest $request){
-        dd($request);
         Task::create([...$request->validated(),'user_id' => auth()->id()]);
             
         return redirect(route('tasks.index'));
