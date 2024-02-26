@@ -20,9 +20,9 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->sentence,
+            'name' => ['en' => $this->faker->text(), 'ka' => $this->faker->text()],
             'user_id' => User::factory(),
-            'description' => $this->faker->paragraph(),
+            'description' => ['en' => $this->faker->sentence(), 'ka' => $this->faker->sentence()],
             'due_date' => $this->faker->dateTime()
         ];
     }

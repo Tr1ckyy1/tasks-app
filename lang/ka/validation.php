@@ -49,7 +49,7 @@ return [
     'distinct' => 'The :attribute field has a duplicate value.',
     'doesnt_end_with' => 'The :attribute field must not end with one of the following: :values.',
     'doesnt_start_with' => 'The :attribute field must not start with one of the following: :values.',
-    'email' => 'The :attribute field must be a valid email address.',
+    'email' => 'მეილი უნდა იყოს სწორი მისამართის',
     'ends_with' => 'The :attribute field must end with one of the following: :values.',
     'enum' => 'შეყვანილი მონაცემები არასწორია.',
     'exists' => 'შეყვანილი მონაცემები არასწორია.',
@@ -95,7 +95,7 @@ return [
         'array' => 'The :attribute field must not have more than :max items.',
         'file' => 'The :attribute field must not be greater than :max kilobytes.',
         'numeric' => 'The :attribute field must not be greater than :max.',
-        'string' => 'The :attribute field must not be greater than :max characters.',
+        'string' => 'მაქსიმუმ :max სიმბოლო.',
     ],
     'max_digits' => 'The :attribute field must not have more than :max digits.',
     'mimes' => 'The :attribute field must be a file of type: :values.',
@@ -114,7 +114,12 @@ return [
     'missing_with_all' => 'The :attribute field must be missing when :values are present.',
     'multiple_of' => 'The :attribute field must be a multiple of :value.',
     'not_in' => 'შეყვანილი მონაცემები არასწორია.',
-    'not_regex' => 'The :attribute field format is invalid.',
+    'not_regex' => [
+        'name_en' => 'მხოლოდ ინგლისური ასოები.',
+        'name_ka' => 'მხოლოდ ქართული ასოები.',
+        'description_en' => 'მხოლოდ ინგლისური ასოები.',
+        'description_ka' => 'მხოლოდ ქართული ასოები.'
+    ],
     'numeric' => 'The :attribute field must be a number.',
     'password' => [
         'letters' => 'The :attribute field must contain at least one letter.',
@@ -132,7 +137,12 @@ return [
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
-    'regex' => 'The :attribute field format is invalid.',
+    'regex' => [
+        'name_en' => 'მხოლოდ ინგლისური ასოები.',
+        'name_ka' => 'მხოლოდ ქართული ასოები.',
+        'description_en' => 'მხოლოდ ინგლისური ასოები.',
+        'description_ka' => 'მხოლოდ ქართული ასოები.'
+    ],
     'required' => 'ეს ველი სავალდებულოა.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',

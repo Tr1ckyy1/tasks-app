@@ -12,6 +12,7 @@ class SessionsController extends Controller
         return view('sessions.create');
     }
     
+    
     public function login(StoreLoginRequest $request){
 
         $attributes = $request->validated();
@@ -22,11 +23,11 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect('/tasks');
+        return redirect(route('tasks.index'));
     }
 
     public function logout(){
         auth()->logout();
-        return redirect('/');
+        return redirect(route('sessions.create'));
     }
 }

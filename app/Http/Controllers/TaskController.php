@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
 
 class TaskController extends Controller
@@ -22,10 +23,30 @@ class TaskController extends Controller
         return view("tasks.index", ['tasks' =>  $tasks]);
     }
 
+    public function create(){
+        return view("tasks.create");
+    }
+    
+    public function store(StoreTaskRequest $request){
+        Task::create([...$request->validated(),'user_id' => auth()->id()]);
+            
+        return redirect(route('tasks.index'));
+    }
+
     public function show(Task $task){
         return view("tasks.show",["task" => $task]);
     }  
+    
+    public function edit(Task $task){
+        return view("tasks.edit", ['task' => $task]);
+    }
 
+    public function update(StoreTaskRequest $request,Task $task){
+        $task->update($request->validated());
+
+        return redirect(route('tasks.index'));
+    }
+    
     public function destroyAll(){
        Task::where('due_date','<', now()->format("Y-m-d"))->delete();
        return back();
