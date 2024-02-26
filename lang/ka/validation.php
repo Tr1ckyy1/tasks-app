@@ -114,7 +114,12 @@ return [
     'missing_with_all' => 'The :attribute field must be missing when :values are present.',
     'multiple_of' => 'The :attribute field must be a multiple of :value.',
     'not_in' => 'შეყვანილი მონაცემები არასწორია.',
-    'not_regex' => 'The :attribute field format is invalid.',
+    'not_regex' => [
+        'name_en' => 'მხოლოდ ინგლისური ასოები.',
+        'name_ka' => 'მხოლოდ ქართული ასოები.',
+        'description_en' => 'მხოლოდ ინგლისური ასოები.',
+        'description_ka' => 'მხოლოდ ქართული ასოები.'
+    ],
     'numeric' => 'The :attribute field must be a number.',
     'password' => [
         'letters' => 'The :attribute field must contain at least one letter.',
@@ -132,7 +137,12 @@ return [
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
-    'regex' => 'The :attribute field format is invalid.',
+    'regex' => [
+        'name_en' => 'მხოლოდ ინგლისური ასოები.',
+        'name_ka' => 'მხოლოდ ქართული ასოები.',
+        'description_en' => 'მხოლოდ ინგლისური ასოები.',
+        'description_ka' => 'მხოლოდ ქართული ასოები.'
+    ],
     'required' => 'ეს ველი სავალდებულოა.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',

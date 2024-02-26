@@ -114,7 +114,12 @@ return [
     'missing_with_all' => 'The :attribute field must be missing when :values are present.',
     'multiple_of' => 'The :attribute field must be a multiple of :value.',
     'not_in' => 'The selected :attribute is invalid.',
-    'not_regex' => 'The :attribute field format is invalid.',
+    'not_regex' => [
+        'name_en' => 'English letters only.',
+        'name_ka' => 'Georgian letters only.',
+        'description_en' => 'English letters only.',
+        'description_ka' => 'Georgian letters only.'
+    ],
     'numeric' => 'The :attribute field must be a number.',
     'password' => [
         'letters' => 'The :attribute field must contain at least one letter.',
@@ -132,7 +137,12 @@ return [
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
-    'regex' => 'The :attribute field format is invalid.',
+    'regex' => [
+        'name_en' => 'English letters only.',
+        'name_ka' => 'Georgian letters only.',
+        'description_en' => 'English letters only.',
+        'description_ka' => 'Georgian letters only.'
+    ],
     'required' => 'The :attribute field is required.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
