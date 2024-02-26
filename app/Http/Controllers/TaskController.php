@@ -70,7 +70,7 @@ class TaskController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        return redirect('/tasks');
+        return redirect(route('tasks.index'));
     }
     
     public function destroyAll(){

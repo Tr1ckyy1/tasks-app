@@ -9,7 +9,7 @@
     name="{{$name}}" 
     id="{{$name}}" 
     {{$attributes}} 
-    >{{$slot ?? old($name)}}</textarea>
+    >{{old($name) ?? $slot}}</textarea>
     <label 
     for="{{$name}}" 
     class="absolute left-6 duration-200 leading-5 text-[#959DA5] text-sm top-2 peer-placeholder-shown:peer-focus:text-sm peer-placeholder-shown:peer-focus:text-[#959DA5] peer-placeholder-shown:peer-focus:top-2 peer-placeholder-shown:text-[#586069] peer-placeholder-shown:top-7 peer-placeholder-shown:text-base"
@@ -21,3 +21,9 @@
         {{$message}}
     </p>   
 @enderror
+
+
+{{-- <textarea class="border border-gray-200 p-2 w-full rounded" type="text" name="{{ $name }}" id="{{ $name }}" required >
+    {{$slot ?? old($name)}}
+</textarea> --}}
+{{-- <x-form.textarea name="excerpt">{{old('excerpt',$post->excerpt)}}</x-form.textarea> --}}

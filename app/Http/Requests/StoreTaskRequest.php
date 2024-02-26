@@ -31,13 +31,13 @@ class StoreTaskRequest extends FormRequest
     }
 
 
-        public function messages(): array
-        {
-            return [
-                'name_en.regex' => __('validation.regex.name_en'),
-                'name_ka.regex' => __('validation.regex.name_ka'),
-                'description_en.regex' => __('validation.regex.description_en'),
-                'description_ka.regex' => __('validation.regex.description_ka'),
-            ];
-        }
+    public function messages(): array
+    {
+        return [
+            'name_en.regex' => __('validation.regex.name_en'),
+            'name_ka.regex' => __('validation.regex.name_ka'),
+            'description_en.regex' => __('validation.regex.description_en'),
+            'description_ka.regex' => __('validation.regex.description_ka'),
+        ];
+    }
 }

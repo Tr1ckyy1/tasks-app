@@ -8,8 +8,8 @@
             <x-form.input name="name_en" type="text" :text="__('tasks.name_label_en')" :create="true"  required/>
             <x-form.input name="name_ka" type="text" :text="__('tasks.name_label_ka')" :create="true"  required/>
 
-            <x-form.textarea name="description_en" :text="__('tasks.description_label_en')"  required/>
-            <x-form.textarea name="description_ka" :text="__('tasks.description_label_ka')"  required/>
+            <x-form.textarea name="description_en" :text="__('tasks.description_label_en')" required/>
+            <x-form.textarea name="description_ka" :text="__('tasks.description_label_ka')" required/>
 
             <x-form.input name="date" type="date" :text="__('tasks.due_date')" required/>
 

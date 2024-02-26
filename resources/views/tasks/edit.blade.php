@@ -11,12 +11,14 @@
             <x-form.input name="name_en" type="text" :text="__('tasks.name_label_en')" :create="true" :value="$task->getTranslation('name','en')" required/>
             <x-form.input name="name_ka" type="text" :text=" __('tasks.name_label_ka')" :create="true" :value="$task->getTranslation('name','ka')" required/>
 
-            <x-form.textarea name="description_en" :text="__('tasks.description_label_en')" required>{{$task->getTranslation('description','en')}}</x-form.textarea>
-            <x-form.textarea name="description_ka" :text="__('tasks.description_label_ka')" required>{{$task->getTranslation('description','ka')}}</x-form.textarea>
+            {{-- <x-form.textarea name="description_en" :text="__('tasks.description_label_en')" required>{{$task->getTranslation('description','en')}}</x-form.textarea> --}}
+            {{-- <x-form.textarea name="description_ka" :text="__('tasks.description_label_ka')" required>{{$task->getTranslation('description','ka')}}</x-form.textarea> --}}
+            <x-form.textarea name="description_en" :text="__('tasks.description_label_en')">{{old('description_en',$task->getTranslation('description','en'))}}</x-form.textarea>
+            <x-form.textarea name="description_ka" :text="__('tasks.description_label_ka')">{{old('description_en',$task->getTranslation('description','en'))}}</x-form.textarea>
 
             <x-form.input name="date" type="date" :text="__('tasks.due_date')" :value="$task->due_date" required/>
 
-            <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100">{{__('tasks.create')}}</button>
+            <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100">{{__('tasks.edit')}}</button>
     </form>
         
     </section>

@@ -30,9 +30,8 @@
                 
                 <form class="space-y-10" method="POST" action="{{ route('sessions.login') }}">
                     @csrf
-                    <x-form.input name="email" 
-                    placeholder="{{ __('auth.login.email_placeholder') }}" type="email" :text="__('auth.login.email')" required/>
-                                 
+                    
+                    <x-form.login-input/>
                     <x-form.login-password/>
 
                     <button class="uppercase outline-none bg-main-blue w-full rounded-2xl p-5 text-white font-bold text-lg hover:bg-[#3386E7] duration-100">
