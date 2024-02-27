@@ -9,11 +9,6 @@ use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
 {
-    public function create()
-    {
-        return view('sessions.create');
-    }
-    
     
     public function login(StoreLoginRequest $request)
     {
@@ -29,12 +24,7 @@ class SessionsController extends Controller
         return redirect(route('tasks.index'));
     }
 
-    public function editProfile()
-    {
-        return view('sessions.edit');
-        // $request->validation()
-    }
-
+    // WORK IN PROGRESS
     // public function updateProfile(StoreProfileRequest $request)
     // {
     //     // $request->validation()

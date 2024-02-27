@@ -8,7 +8,8 @@ use App\Models\User;
 
 class TaskController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tasksQuery = User::find(auth()->id())->tasks();
 
         $sortCreated = request('sortCreated');
@@ -36,37 +37,39 @@ class TaskController extends Controller
 
         return view("tasks.index", ['tasks' =>  $tasks]);
     }
-
-    public function create(){
-        return view("tasks.create");
-    }
     
-    public function store(StoreTaskRequest $request){
+    public function store(StoreTaskRequest $request)
+    {
         Task::create([...$request->validated(),'user_id' => auth()->id()]);
             
         return redirect(route('tasks.index'));
     }
 
-    public function show(Task $task){
+    public function show(Task $task)
+    {
         return view("tasks.show",["task" => $task]);
     }  
     
-    public function edit(Task $task){
+    public function edit(Task $task)
+    {
         return view("tasks.edit", ['task' => $task]);
     }
 
-    public function update(StoreTaskRequest $request,Task $task){
+    public function update(StoreTaskRequest $request,Task $task)
+    {
         $task->update($request->validated());
 
         return redirect(route('tasks.index'));
     }
     
-    public function destroyAll(){
+    public function destroyAll()
+    {
        Task::where('due_date','<', now()->format("Y-m-d"))->delete();
        return back();
     }
 
-    public function destroy(Task $task){
+    public function destroy(Task $task)
+    {
         $task->delete();
         return back();
     }
