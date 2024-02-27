@@ -3,7 +3,7 @@
 <div class="relative">
     <textarea 
     class="peer resize-none bg-main-grey min-h-[160px] text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring  focus:ring-main-blue placeholder:text-[#586069]
-    @error($name)
+    @error($dotNotation)
     ring ring-main-red
     @enderror" 
     placeholder=""

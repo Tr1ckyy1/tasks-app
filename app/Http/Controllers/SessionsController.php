@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLoginRequest;
+use App\Http\Requests\StoreProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
 {
-    public function create(){
-        return view('sessions.create');
-    }
     
-    
-    public function login(StoreLoginRequest $request){
+    public function login(StoreLoginRequest $request)
+    {
 
         $attributes = $request->validated();
 
@@ -26,7 +24,14 @@ class SessionsController extends Controller
         return redirect(route('tasks.index'));
     }
 
-    public function logout(){
+    // WORK IN PROGRESS
+    // public function updateProfile(StoreProfileRequest $request)
+    // {
+    //     // $request->validation()
+    // }
+
+    public function logout()
+    {
         auth()->logout();
         return redirect(route('sessions.create'));
     }

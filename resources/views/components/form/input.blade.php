@@ -1,15 +1,14 @@
-@props(['name','text','dotNotation','create' => false,'value'])    
+@props(['name','text','dotNotation','create' => false])    
 
     <div class="relative">
         <input 
         class="peer bg-main-grey  text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring  focus:ring-main-blue placeholder:text-[#586069]
-        @error($name)
+        @error($dotNotation) 
         ring ring-main-red
         @enderror" 
         name="{{$name}}" 
         id="{{$name}}" 
-   ხ    placeholder=""
-        {{$attributes(['value' => old($dotNotation)])}} 
+        {{$attributes(['value' => old($dotNotation), 'placeholder' => ''])}} 
         />    
         <label 
         for="{{$name}}" 
