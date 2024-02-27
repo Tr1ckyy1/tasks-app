@@ -21,6 +21,8 @@ Route::get('/localization/{locale}',LocalizationController::class)->name('locali
 
 Route::middleware(Localization::class)->group(function(){
     Route::get("/",[SessionsController::class,'create'])->middleware('guest')->name('sessions.create');
+    Route::get("/user",[SessionsController::class,'editProfile'])->middleware('auth')->name('sessions.edit_profile');
+    // Route::post("/user",[SessionsController::class,'editProfile'])->middleware('auth')->name('sessions.editProfile');
     Route::post("/login",[SessionsController::class,'login'])->middleware('guest')->name('sessions.login');
     Route::post("/logout",[SessionsController::class,'logout'])->middleware('auth')->name('sessions.logout');
 

@@ -1,0 +1,24 @@
+<div class="relative">
+    <input 
+    class="peer bg-main-grey  text-[#586069] w-full px-6 py-7 rounded-2xl outline-none focus:ring  focus:ring-main-blue placeholder:text-[#586069]
+    @error('email') 
+    ring ring-main-red
+    @enderror" 
+    name="email" 
+    id="email" 
+    placeholder="{{auth()->user()->email}}"
+    {{$attributes(['value' => old('email'), 'placeholder' => ''])}} 
+    />    
+    <label 
+    for="email" 
+    class="absolute left-6 duration-200 leading-5 text-[#959DA5] text-sm top-4 -translate-y-1/2 peer-placeholder-shown:peer-focus:text-sm peer-placeholder-shown:peer-focus:text-[#959DA5] peer-placeholder-shown:peer-focus:top-4 peer-placeholder-shown:text-[#586069] peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base"
+    >{{__('profile.email')}}</label>
+</div>
+
+{{-- :text="__('profile.email')" :placeholder="auth()->user()->email" dotNotation="" name="password_current" type="password" :create="true" required --}}
+
+@error('email')
+    <p class="text-main-red mt-2 text-xs">
+        {{$message}}
+    </p>   
+@enderror

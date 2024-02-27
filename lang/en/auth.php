@@ -23,7 +23,7 @@ return [
         'password' => 'Password',
         'email_placeholder' => 'Write your email',
         'password_placeholder' => 'Write your password',
-        'button' => 'log in'
+        'button' => 'log in',
     ]
 
 ];

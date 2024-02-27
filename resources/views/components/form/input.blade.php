@@ -8,8 +8,7 @@
         @enderror" 
         name="{{$name}}" 
         id="{{$name}}" 
-        placeholder=""
-        {{$attributes(['value' => old($dotNotation)])}} 
+        {{$attributes(['value' => old($dotNotation), 'placeholder' => ''])}} 
         />    
         <label 
         for="{{$name}}" 
