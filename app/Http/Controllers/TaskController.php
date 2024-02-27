@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
-use App\Models\User;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        $tasksQuery = User::find(auth()->id())->tasks();
+        $tasksQuery = auth()->user()->tasks();
 
         $sortCreated = request('sortCreated');
         $sortDue = request('sortDue');
