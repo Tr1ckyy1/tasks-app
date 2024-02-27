@@ -30,14 +30,14 @@
                         <img src="{{file_exists(public_path('storage/images/profile_image-' .auth()->id() .'.png')) ? asset('storage/images/profile_image-' .auth()->id() .'.png') : asset('storage/images/basic-avatar.png')}}" class="w-full h-full rounded-full"/>
                     </div>
                     <x-form.upload-input name="profile_image" :text="__('profile.upload_profile')"/>
-                    <button class="uppercase font-semibold tracking-wide hover:underline duration-100">delete</button>
+                    <button class="uppercase font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="h-32 w-32">
                         <img src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('storage/images/intersect.png')}}" class="w-full h-full rounded-xl"/>
                     </div>
                     <x-form.upload-input name="cover_image" :text="__('profile.upload_cover')"/>
-                    <button class="uppercase font-semibold tracking-wide hover:underline duration-100">delete</button>
+                    <button class="uppercase font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
                 </div>
             </div>
     
