@@ -14,7 +14,7 @@
         />    
     <label 
     for="password" 
-    class="absolute top-2 text-sm left-6 text-[#2F363D] peer-focus:text-xs peer-focus:top-1 duration-200 leading-5"
+    class="absolute top-1 left-6 text-[#2F363D] text-xs peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:peer-focus:top-1 duration-200 peer-placeholder-shown:peer-focus:text-xs"
     >
         {{__('auth.login.password')}}
     </label>

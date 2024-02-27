@@ -15,7 +15,7 @@
         <div class="flex h-full items-center gap-20 px-10 py-5">
 
             <div class="flex-1 h-full">
-                <img src="{{asset('images/intersect.png')}}" class="rounded-xl h-full"/>
+                <img src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('storage/images/intersect.png')}}" class="rounded-xl h-full"/>
             </div>
             
             <div class="gap-10 relative flex-1 h-full flex flex-col justify-center">
@@ -24,7 +24,7 @@
                         <h1 class="tracking-wide font-bold text-2xl uppercase">{{ __('auth.login.title') }}</h1>
                         <p class="text-secondary-grey text-sm]">{{ __('auth.login.details') }}</p>
                     </div>
-                    <img src="{{asset('images/smile.png')}}" class="rounded-xl h-full"/>
+                    <img src="{{asset('storage/images/smile.png')}}" class="rounded-xl h-full"/>
                 </div>
                 
                 

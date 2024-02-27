@@ -2,7 +2,7 @@
     <section class="flex flex-col items-center gap-20">
 
         <header>
-            <img src="{{asset('images/intersect.png')}}" alt="" class="w-16 h-16 rounded-full"/>
+            <img src="{{file_exists(public_path('storage/images/profile_image-' .auth()->id() .'.png')) ?  asset('storage/images/profile_image-' .auth()->id() .'.png') : asset('storage/images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
         </header>
         <main>
             <ul class="space-y-4">
@@ -18,9 +18,8 @@
                     </div>
                 </x-list>
 
-                <x-list name="{{ __('sidebar.profile') }}">
+                <x-list :link="route('sessions.edit_profile')" name="{{ __('sidebar.profile') }}">
                     <div class="w-8">
-
                         <x-icons.profile-icon/>
                     </div>
                 </x-list>

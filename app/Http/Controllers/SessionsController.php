@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLoginRequest;
 use App\Http\Requests\StoreProfileRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
@@ -24,15 +26,37 @@ class SessionsController extends Controller
         return redirect(route('tasks.index'));
     }
 
-    // WORK IN PROGRESS
-    // public function updateProfile(StoreProfileRequest $request)
-    // {
-    //     // $request->validation()
-    // }
+
+    public function update(StoreProfileRequest $request, User $user)
+    {
+        $attributes = $request->validated();
+        if($attributes['password_current'] && !Hash::check($attributes['password_current'],$user->password)){
+            return back()->withErrors(['password_current' => __('validation.confirmed')]);
+        }
+
+        if(isset($attributes['password_new'])){
+            $user->password = bcrypt($attributes['password_new']);
+            $user->save();
+        }
+        if(isset($attributes['profile_image'])){
+            $filename = $request->profile_image->getClientOriginalName();
+            $request->profile_image->storeAs('images','profile_image-'.$user->id  .'.png','public');
+            $user->update(['profile_image' => $filename]);
+        }
+
+        if(isset($attributes['cover_image'])){
+            $filename = $request->cover_image->getClientOriginalName();
+            $request->cover_image->storeAs('images','cover_image.png','public');
+        }
+        
+        return back();
+        
+    }
 
     public function logout()
     {
         auth()->logout();
         return redirect(route('sessions.create'));
     }
+    
 }
