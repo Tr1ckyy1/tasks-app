@@ -24,7 +24,6 @@
             reader.onload = function(e){
                 document.querySelector(`#img-${name}`).src = e.target.result;
                 document.querySelector(`#delete-${name}`).style.display = 'block';
-
             }
             reader.readAsDataURL(event.target.files[0]);
         }
