@@ -30,9 +30,6 @@ Make sure you have the following software installed on your system:
 The Task Manager Application is built using the following technologies:
 
 -   Laravel 8.0 - Back-end framework
--   Laravel Nova - Admin Panel
--   Laravel Mix - Webpack wrapper for asset compilation
--   JWT Auth - Authentication system
 -   Spatie Translatable - Language translation
 
 ### Getting Started
@@ -97,6 +94,16 @@ in order to cache environment variables.
 
 #
 
+### Create user
+
+In order to get started with a freshly new user, execute:
+
+```sh
+php artisan task-manager:create-user
+```
+
+#
+
 ### Migration
 
 if you've completed getting started section, then migrating database if fairly simple process, just execute:
@@ -130,11 +137,19 @@ it builds your js files into executable scripts.
 ```bash
 ├─── app/
 ├── Console
+│   ├── Commands
+├── ├── ├── CreateUser
 ├── Exceptions
 ├── Http
 │   ├── Controllers
+├── ├── ├── LocalizationController
+├── ├── ├── SessionController
+├── ├── ├── TaskController
 │   └── Middleware
+├── ├── ├── Localization
 ├── Models
+│   ├── Task
+│   ├── User
 ├── Providers
 bootstrap/
 config/
