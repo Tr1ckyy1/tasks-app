@@ -12,5 +12,6 @@ return [
     'upload_cover' => 'upload cover',
     'delete' => 'delete',
     'change_button' => 'change',
-    'change_success' => 'Profile Changed Successfully'
+    'change_success' => 'Profile Changed Successfully',
+    'error' => 'Please Make Changes Before Submitting'
 ];

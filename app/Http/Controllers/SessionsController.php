@@ -30,6 +30,15 @@ class SessionsController extends Controller
     public function update(StoreProfileRequest $request, User $user)
     {
         $attributes = $request->validated();
+
+        if (
+            !isset($attributes['password_new']) &&
+            !isset($attributes['profile_image']) &&
+            !isset($attributes['cover_image'])
+        ) {
+            return back()->with('error',__('profile.error'));
+        }
+
         if($attributes['password_current'] && !Hash::check($attributes['password_current'],$user->password)){
             return back()->withErrors(['password_current' => __('validation.confirmed')]);
         }
@@ -41,7 +50,7 @@ class SessionsController extends Controller
         if(isset($attributes['profile_image'])){
             $filename = 'profile-image-'.$user->id . '.' . $request->profile_image->getClientOriginalExtension();
             $request->profile_image->storeAs('images',$filename,'public');
-            $user->update(['profile-image' => $filename]);
+            $user->update(['profile_image' => $filename]);
         }
 
         if(isset($attributes['cover_image'])){
@@ -50,8 +59,8 @@ class SessionsController extends Controller
         }
         
         return back()->with('success',__('profile.change_success'));
-        
     }
+    
 
     public function logout()
     {
