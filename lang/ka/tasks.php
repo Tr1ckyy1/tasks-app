@@ -22,4 +22,8 @@ return [
     'name_label_ka' => 'დავალების სახელი ქართულად',
     'description_label_en' => 'აღწერა ინგლისურად',
     'description_label_ka' => 'აღწერა ქართულად',
+    'create_success' => 'დავალება დამატებულია',
+    'edit_success' => 'დავალება რედაქტირებულია',
+    'delete_success' => 'დავალება წაშლილია',
+    'delete_all' => 'ყველა გადაცილებული დავალება წაშლილია'
 ];

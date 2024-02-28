@@ -11,5 +11,6 @@ return [
     'upload_profile' => 'ატვირთეთ პროფილის სურათი',
     'upload_cover' => 'ატვირთეთ ფონის სურათი',
     'delete' => 'წაშლა',
-    'change_button' => 'შეცვლა'
+    'change_button' => 'შეცვლა',
+    'change_success' => 'პროფილი წარმატებით შეიცვალა',
 ];

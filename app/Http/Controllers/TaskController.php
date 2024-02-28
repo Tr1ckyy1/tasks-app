@@ -41,7 +41,7 @@ class TaskController extends Controller
     {
         Task::create([...$request->validated(),'user_id' => auth()->id()]);
             
-        return redirect(route('tasks.index'));
+        return redirect(route('tasks.index'))->with('success',__('tasks.create_success'));
     }
 
     public function show(Task $task)
@@ -58,18 +58,18 @@ class TaskController extends Controller
     {
         $task->update($request->validated());
 
-        return redirect(route('tasks.index'));
+        return redirect(route('tasks.index'))->with('success',__('tasks.edit_success'));
     }
     
     public function destroyAll()
     {
        Task::where('due_date','<', now()->format("Y-m-d"))->delete();
-       return back();
+       return back()->with('deleted',__('tasks.delete_all'));
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
-        return back();
+        return back()->with('deleted',__('tasks.delete_success'));
     }
 }

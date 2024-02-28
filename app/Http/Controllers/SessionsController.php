@@ -49,7 +49,7 @@ class SessionsController extends Controller
             $request->cover_image->storeAs('images','cover_image.png','public');
         }
         
-        return back();
+        return back()->with('success',__('profile.change_success'));
         
     }
 
