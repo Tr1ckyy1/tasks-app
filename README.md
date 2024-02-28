@@ -156,4 +156,4 @@ vite.config.js
 
 ### Interaction
 
-<img src="public/drawsql.png" alt="drawing" width="400" height="400" style="margin-right: 20px" class="w-full object-cover" />
+<img src="public/drawSQL.png" alt="drawing" style="margin-right: 20px" class="w-full object-cover" />
