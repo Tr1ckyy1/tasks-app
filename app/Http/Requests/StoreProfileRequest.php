@@ -29,4 +29,11 @@ class StoreProfileRequest extends FormRequest
            'cover_image' => ['image']
         ];
     }
+    
+    public function messages(): array
+    {
+        return [
+            'password_new' => __('validation.password_match')
+        ];
+    }
 }
