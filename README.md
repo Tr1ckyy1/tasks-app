@@ -1,5 +1,5 @@
 <div style="display:flex; align-items: center">
-  <img src="public/example.png" alt="drawing" width="400" height="400" style="margin-right: 20px" />
+  <img src="public/example.png" alt="drawing" width="400" height="400" style="margin-right: 20px" class="w-full object-cover" />
   <h1 style="position:relative; top: -6px" >Task Manager Application</h1>
 </div>
 
