@@ -3,6 +3,7 @@
                
         <header>
             <img src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('storage/images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
+        </header>
         <main>
             <ul class="space-y-4">
                 <x-list :link="route('tasks.index')" name="{{ __('sidebar.tasks') }}">
