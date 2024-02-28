@@ -1,5 +1,5 @@
 <div style="display:flex; align-items: center">
-  <img src="public/example.png" alt="drawing" width="400" height="400" style="margin-right: 20px" class="w-full object-cover" />
+  <img src="public/example.png" alt="drawing" class="w-full object-cover mr-5" />
   <h1 style="position:relative; top: -6px" >Task Manager Application</h1>
 </div>
 
@@ -156,4 +156,4 @@ vite.config.js
 
 ### Interaction
 
-<img src="public/drawSQL.png" alt="drawing" style="margin-right: 20px" class="w-full object-cover" />
+<img src="public/drawSQL.png" alt="drawing"  class="mr-5 w-full object-cover" />
