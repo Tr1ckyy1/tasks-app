@@ -8,8 +8,8 @@
             @csrf
             @method('PATCH')
 
-            <x-form.input dotNotation="name.en" name="name[en]" type="text" :text="__('tasks.name_label_en')" :create="true" :value="old('name.en',$task->getTranslation('name','en'))" required/>
-            <x-form.input dotNotation="name.ka" name="name[ka]" type="text" :text=" __('tasks.name_label_ka')" :create="true" :value="old('name.ka',$task->getTranslation('name','ka'))" required/>
+            <x-form.input dotNotation="name.en" name="name[en]" type="text" :text="__('tasks.name_label_en')" :value="old('name.en',$task->getTranslation('name','en'))" required/>
+            <x-form.input dotNotation="name.ka" name="name[ka]" type="text" :text=" __('tasks.name_label_ka')" :value="old('name.ka',$task->getTranslation('name','ka'))" required/>
 
             <x-form.textarea dotNotation="description.en" name="description[en]" :text="__('tasks.description_label_en')">{{old('description.en',$task->getTranslation('description','en'))}}</x-form.textarea>
             <x-form.textarea dotNotation="description.ka" name="description[ka]" :text="__('tasks.description_label_ka')">{{old('description.ka',$task->getTranslation('description','ka'))}}</x-form.textarea>

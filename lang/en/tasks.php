@@ -22,4 +22,8 @@ return [
     'name_label_ka' => 'Task name in Georgian',
     'description_label_en' => 'Description in English',
     'description_label_ka' => 'Description in Georgian',
+    'create_success' => 'Task Created Successfully',
+    'edit_success' => 'Task Edited Successfully',
+    'delete_success' => 'Task Deleted',
+    'delete_all' => 'All Overdue Tasks Have Been Deleted'
 ];

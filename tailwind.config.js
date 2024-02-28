@@ -16,6 +16,8 @@ export default {
                 "main-red": "#E91818",
                 "main-blue": "#499AF9",
                 "secondary-grey": "#6A737D",
+                "input-grey": "#959DA5",
+                "input-grey-secondary": "#586069",
             },
         },
     },

@@ -5,8 +5,8 @@
         </h1>
         <form method="post" class="space-y-4" action="{{route('tasks.store')}}">
             @csrf
-            <x-form.input dotNotation="name.en"  name="name[en]" type="text" :text="__('tasks.name_label_en')" :create="true"  required/>
-            <x-form.input dotNotation="name.ka" name="name[ka]" type="text" :text="__('tasks.name_label_ka')" :create="true"  required/>
+            <x-form.input dotNotation="name.en"  name="name[en]" type="text" :text="__('tasks.name_label_en')"  required/>
+            <x-form.input dotNotation="name.ka" name="name[ka]" type="text" :text="__('tasks.name_label_ka')"  required/>
 
             <x-form.textarea dotNotation="description.en" name="description[en]" :text="__('tasks.description_label_en')" required/>
             <x-form.textarea dotNotation="description.ka" name="description[ka]" :text="__('tasks.description_label_ka')" required/>

@@ -11,5 +11,6 @@ return [
     'upload_profile' => 'upload profile',
     'upload_cover' => 'upload cover',
     'delete' => 'delete',
-    'change_button' => 'change'
+    'change_button' => 'change',
+    'change_success' => 'Profile Changed Successfully'
 ];

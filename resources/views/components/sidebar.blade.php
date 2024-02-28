@@ -1,8 +1,8 @@
 <aside class="h-full bg-main-grey min-w-44 rounded-2xl flex flex-col items-center py-8 justify-between px-8">
     <section class="flex flex-col items-center gap-20">
-
+               
         <header>
-            <img src="{{asset('images/intersect.png')}}" alt="" class="w-16 h-16 rounded-full"/>
+            <img src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('storage/images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
         </header>
         <main>
             <ul class="space-y-4">
@@ -18,9 +18,8 @@
                     </div>
                 </x-list>
 
-                <x-list name="{{ __('sidebar.profile') }}">
+                <x-list :link="route('sessions.edit_profile')" name="{{ __('sidebar.profile') }}">
                     <div class="w-8">
-
                         <x-icons.profile-icon/>
                     </div>
                 </x-list>
@@ -35,10 +34,4 @@
             <button type="submit" class="flex items-center gap-3 hover:underline"> <x-icons.logout-icon class="w-5"/>{{ __('sidebar.logout') }}</button>
         </form>
     </footer>
-</aside>    
-
-
-{{-- 'my_tasks' => 'ჩემი დავალებები',
-    'overdue' => 'გადაცილებული დავალებები',
-    'profile' => 'პროფილი',
-    'logout' => 'გასვლა' --}}
+</aside>
