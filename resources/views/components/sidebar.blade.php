@@ -34,10 +34,4 @@
             <button type="submit" class="flex items-center gap-3 hover:underline"> <x-icons.logout-icon class="w-5"/>{{ __('sidebar.logout') }}</button>
         </form>
     </footer>
-</aside>    
-
-
-{{-- 'my_tasks' => 'ჩემი დავალებები',
-    'overdue' => 'გადაცილებული დავალებები',
-    'profile' => 'პროფილი',
-    'logout' => 'გასვლა' --}}
+</aside>
