@@ -1,9 +1,8 @@
 <aside class="h-full bg-main-grey min-w-44 rounded-2xl flex flex-col items-center py-8 justify-between px-8">
     <section class="flex flex-col items-center gap-20">
-
+               
         <header>
-            <img src="{{file_exists(public_path('storage/images/profile_image-' .auth()->id() .'.png')) ?  asset('storage/images/profile_image-' .auth()->id() .'.png') : asset('storage/images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
-        </header>
+            <img src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('storage/images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
         <main>
             <ul class="space-y-4">
                 <x-list :link="route('tasks.index')" name="{{ __('sidebar.tasks') }}">

@@ -39,9 +39,9 @@ class SessionsController extends Controller
             $user->save();
         }
         if(isset($attributes['profile_image'])){
-            $filename = $request->profile_image->getClientOriginalName();
-            $request->profile_image->storeAs('images','profile_image-'.$user->id  .'.png','public');
-            $user->update(['profile_image' => $filename]);
+            $filename = 'profile-image-'.$user->id . '.' . $request->profile_image->getClientOriginalExtension();
+            $request->profile_image->storeAs('images',$filename,'public');
+            $user->update(['profile-image' => $filename]);
         }
 
         if(isset($attributes['cover_image'])){
