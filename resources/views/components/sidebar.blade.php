@@ -28,7 +28,7 @@
     </section>
     
     <footer class="w-full">
-        <form method="POST" action="{{route('sessions.logout')}}">
+        <form method="POST" action="{{route('sessions.logout')}}" novalidate>
             @csrf
 
             <button type="submit" class="flex items-center gap-3 hover:underline"> <x-icons.logout-icon class="w-5"/>{{ __('sidebar.logout') }}</button>

@@ -8,7 +8,7 @@
     class="{{ strtotime($task->due_date) < strtotime('today') ? 'text-main-red' : 'text-secondary-grey' }} 
     py-4">{{ date("d/m/Y",strtotime($task->due_date)) }}</td>
     <td class="flex gap-6 text-secondary-grey py-4">
-        <form method="POST" action="{{ route('tasks.destroy',['task' => $task->id]) }}">
+        <form method="POST" action="{{ route('tasks.destroy',['task' => $task->id]) }}" novalidate>
             @csrf
             @method('DELETE')
             

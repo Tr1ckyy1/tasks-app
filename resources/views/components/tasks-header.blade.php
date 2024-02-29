@@ -10,7 +10,7 @@
         </a>
     @else
         <div class="flex gap-4">
-            <form method="post" action="{{route('tasks.destroy_all')}}">
+            <form method="post" action="{{route('tasks.destroy_all')}}" novalidate>
                 @csrf
                 @method("DELETE")
 

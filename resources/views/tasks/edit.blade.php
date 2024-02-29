@@ -4,7 +4,7 @@
         <h1 class="font-bold uppercase text-3xl text-center">
             {{((__('tasks.edit')))}}
         </h1>
-        <form method="post" class="space-y-4" action="{{route('tasks.update', ['task' => $task])}}">
+        <form method="post" class="space-y-4" action="{{route('tasks.update', ['task' => $task])}}" novalidate>
             @csrf
             @method('PATCH')
 

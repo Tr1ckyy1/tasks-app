@@ -4,7 +4,7 @@
             {{((__('profile.profile')))}}
         </h1>
         
-        <form method="post" action="{{route('sessions.update',['user' => auth()->id()])}}" enctype="multipart/form-data" class="space-y-10 h-full">
+        <form method="post" action="{{route('sessions.update',['user' => auth()->id()])}}" enctype="multipart/form-data" class="space-y-10 h-full" novalidate>
             @csrf
             @method('PATCH')
 
