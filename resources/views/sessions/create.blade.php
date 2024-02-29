@@ -28,7 +28,7 @@
                 </div>
                 
                 
-                <form class="space-y-10" method="POST" action="{{ route('sessions.login') }}">
+                <form class="space-y-10" method="POST" action="{{ route('sessions.login') }}" novalidate>
                     @csrf
                     
                     <x-form.login-input/>

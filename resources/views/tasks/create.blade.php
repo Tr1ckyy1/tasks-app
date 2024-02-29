@@ -3,7 +3,7 @@
         <h1 class="font-bold uppercase text-3xl text-center">
             {{((__('tasks.create')))}}
         </h1>
-        <form method="post" class="space-y-4" action="{{route('tasks.store')}}">
+        <form method="post" class="space-y-4" action="{{route('tasks.store')}}" novalidate>
             @csrf
             <x-form.input dotNotation="name.en"  name="name[en]" type="text" :text="__('tasks.name_label_en')"  required/>
             <x-form.input dotNotation="name.ka" name="name[ka]" type="text" :text="__('tasks.name_label_ka')"  required/>
