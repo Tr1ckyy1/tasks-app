@@ -25,8 +25,15 @@ class StoreProfileRequest extends FormRequest
            'password_current' => ['nullable','required_with:password_new'],
            'password_new' => ['nullable','required_with:password_current','min:8','confirmed','regex:/^[A-Za-z0-9\s,.()$!%@]+$/'],
            'password_new_confirmation' => '',
-           'profile_image' => '',
-           'cover_image' => ''
+           'profile_image' => ['image'],
+           'cover_image' => ['image']
+        ];
+    }
+    
+    public function messages(): array
+    {
+        return [
+            'password_new' => __('validation.password_match')
         ];
     }
 }

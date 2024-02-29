@@ -54,7 +54,6 @@ class SessionsController extends Controller
         }
 
         if(isset($attributes['cover_image'])){
-            $filename = $request->cover_image->getClientOriginalName();
             $request->cover_image->storeAs('images','cover_image.png','public');
         }
         
