@@ -17,27 +17,28 @@
 @enderror
 
 @once 
-<script>
-   function changeImage(event,name){
-        if(event.target.files && event.target.files[0]){
-            const reader = new FileReader();
-            reader.onload = function(e){
-                document.querySelector(`#img-${name}`).src = e.target.result;
-                document.querySelector(`#delete-${name}`).style.display = 'block';
+    <script>
+    function changeImage(event,name){
+            if(event.target.files && event.target.files[0]){
+                const reader = new FileReader();
+                reader.onload = function(e){
+                    document.querySelector(`#delete-${name}`).style.display = 'block';
+                    if(event.target.files[0].type.startsWith('image'))
+                    document.querySelector(`#img-${name}`).src = e.target.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
             }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-   }
-
-   function removeImage(name){
-    if(name === 'profile_image'){
-        document.querySelector(`#img-${name}`).src = "{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('storage/images/basic-avatar.png')}}"
-    }else if(name === "cover_image"){
-        document.querySelector(`#img-${name}`).src = "{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('storage/images/intersect.png')}}"
     }
-        const fileInput = document.querySelector(`#${name}`).value = "";
-        document.querySelector(`#delete-${name}`).style.display = 'none';
 
-   }
-</script>
-    @endonce
+    function removeImage(name){
+        if(name === 'profile_image'){
+            document.querySelector(`#img-${name}`).src = "{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('storage/images/basic-avatar.png')}}"
+        }else if(name === "cover_image"){
+            document.querySelector(`#img-${name}`).src = "{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('storage/images/intersect.png')}}"
+        }
+            const fileInput = document.querySelector(`#${name}`).value = "";
+            document.querySelector(`#delete-${name}`).style.display = 'none';
+
+    }
+    </script>
+@endonce
