@@ -32,9 +32,9 @@
 
     function removeImage(name){
         if(name === 'profile_image'){
-            document.querySelector(`#img-${name}`).src = "{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('storage/images/basic-avatar.png')}}"
+            document.querySelector(`#img-${name}`).src = "{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('basic-images/basic-avatar.png')}}"
         }else if(name === "cover_image"){
-            document.querySelector(`#img-${name}`).src = "{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('storage/images/intersect.png')}}"
+            document.querySelector(`#img-${name}`).src = "{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('basic-images/intersect.png')}}"
         }
             const fileInput = document.querySelector(`#${name}`).value = "";
             document.querySelector(`#delete-${name}`).style.display = 'none';
