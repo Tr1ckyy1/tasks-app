@@ -14,7 +14,7 @@
             <x-form.textarea dotNotation="description.en" name="description[en]" :text="__('tasks.description_label_en')">{{old('description.en',$task->getTranslation('description','en'))}}</x-form.textarea>
             <x-form.textarea dotNotation="description.ka" name="description[ka]" :text="__('tasks.description_label_ka')">{{old('description.ka',$task->getTranslation('description','ka'))}}</x-form.textarea>
 
-            <x-form.input dotNotation="due_date" name="due_date" type="date" :text="__('tasks.due_date')" :value="$task->due_date" required/>
+            <x-form.input dotNotation="due_date" name="due_date" type="date" :text="__('tasks.due_date')" :value="old('due_date',$task->due_date)" required/>
 
             <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100 outline-none">{{__('tasks.edit')}}</button>
     </form>
