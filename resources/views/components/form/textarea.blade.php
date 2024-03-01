@@ -2,9 +2,9 @@
 
 <div class="relative">
     <textarea 
-    class="peer resize-none bg-main-grey min-h-[160px] text-input-grey-secondary w-full px-6 py-7 rounded-2xl outline-none focus:ring  focus:ring-main-blue placeholder:text-input-grey-secondary
+    class="peer resize-none bg-main-grey min-h-[160px] text-input-grey-secondary w-full px-6 py-7 rounded-2xl outline-none focus:ring-1  focus:ring-main-blue placeholder:text-input-grey-secondary
     @error($dotNotation)
-    ring ring-main-red
+    ring-1 ring-main-red
     @enderror" 
     placeholder=""
     name="{{$name}}" 

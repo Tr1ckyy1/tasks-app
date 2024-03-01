@@ -1,8 +1,8 @@
 <div x-data="{isFocused: false, showPassword:false}" class="relative">
     <input 
-        class="peer bg-main-grey  text-input-grey-secondary w-full px-6 py-7 rounded-2xl outline-none focus:ring  focus:ring-main-blue placeholder:text-input-grey-secondary
+        class="peer bg-main-grey  text-input-grey-secondary w-full px-6 py-7 rounded-2xl outline-none focus:ring-1  focus:ring-main-blue placeholder:text-input-grey-secondary
         @error('password')
-            ring ring-main-red
+            ring-1 ring-main-red
         @enderror"  
         name="email" 
         id="email" 
