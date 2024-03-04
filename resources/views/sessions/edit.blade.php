@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="w-1/3 mx-auto space-y-4 h-full flex flex-col">
+    <section class="w-1/3 mx-auto space-y-4 h-full py-10 flex flex-col">
         <h1 class="font-bold uppercase text-3xl text-center">
             {{((__('profile.profile')))}}
         </h1>
@@ -41,7 +41,10 @@
                 </div>
             </div>
     
-            <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100 outline-none">{{__('profile.change_button')}}</button>
+            <div class="pb-14">
+
+                <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100 outline-none">{{__('profile.change_button')}}</button>
+            </div>
     </form>
         
     </section>

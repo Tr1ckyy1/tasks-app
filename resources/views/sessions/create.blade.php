@@ -14,11 +14,11 @@
     <section class="h-screen max-w-[1140px] mx-auto space-y-2">
         <div class="flex h-full items-center gap-20 px-10 py-5">
 
-            <div class="flex-1 ">
+            <div class="flex-1 h-[740px]">
                 <img src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('basic-images/intersect.png')}}" class="rounded-l-xl h-full"/>
             </div>
             
-            <div class="gap-10 relative flex-1 h-full flex flex-col justify-center">
+            <div class="gap-10 relative flex-1 h-[740px] flex flex-col justify-center">
                 <div class="flex gap-20  items-center justify-between">
                     <div>
                         <h1 class="tracking-wide font-bold text-2xl uppercase">{{ __('auth.login.title') }}</h1>

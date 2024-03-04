@@ -64,12 +64,12 @@ class TaskController extends Controller
     public function destroyAll()
     {
        Task::where('due_date','<', now()->format("Y-m-d"))->delete();
-       return back()->with('deleted',__('tasks.delete_all'));
+       return back()->with('success',__('tasks.delete_all'));
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
-        return back()->with('deleted',__('tasks.delete_success'));
+        return back()->with('success',__('tasks.delete_success'));
     }
 }

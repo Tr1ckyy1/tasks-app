@@ -15,7 +15,7 @@ return [
     'due_date' => 'Due Date',
     'actions' => 'Actions',
     'delete_link' => 'Delete',
-    'edit_link' => 'Edit',
+    'edit_link' => 'Edit task',
     'show_link' => 'Show',
     'back_link' => 'back',
     'name_label_en' => 'Task name in English',

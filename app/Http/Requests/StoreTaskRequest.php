@@ -14,10 +14,10 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name.en' => ['required','min:6','max:255','regex:/^[A-Za-z0-9\s,.()$!%@]+$/'],
-            'name.ka' => ['required','min:6','max:255','regex:/^[ა-ჰ0-9\s,.()$!%@]+$/'],
-            'description.en' => ['required','min:10','max:255','regex:/^[A-Za-z0-9\s,.()$!%@]+$/'],
-            'description.ka' => ['required','min:10','max:255','regex:/^[ა-ჰ0-9\s,.()$!%@]+$/'],
+            'name.en' => ['required','min:3','max:255','regex:/^[A-Za-z0-9\s,.()$!%@]+$/'],
+            'name.ka' => ['required','min:3','max:255','regex:/^[ა-ჰ0-9\s,.()$!%@]+$/'],
+            'description.en' => ['required','min:3','max:255','regex:/^[A-Za-z0-9\s,.()$!%@]+$/'],
+            'description.ka' => ['required','min:3','max:255','regex:/^[ა-ჰ0-9\s,.()$!%@]+$/'],
             'due_date' => ['required','date'],
         ];
     }
