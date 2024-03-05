@@ -17,7 +17,6 @@
     >{{$text}}</label>
 </div>
 
-{{-- <p>sdla </p> --}}
 @error($dotNotation)
     <p class="text-main-red mt-2 text-xs">
         {{$message}}
