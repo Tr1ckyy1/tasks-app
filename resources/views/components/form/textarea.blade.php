@@ -13,10 +13,11 @@
     >{{old($dotNotation) ?? $slot}}</textarea>
     <label 
     for="{{$name}}" 
-    class="absolute left-6 duration-200 leading-5 text-input-grey text-sm top-2 peer-placeholder-shown:peer-focus:text-sm peer-placeholder-shown:peer-focus:text-input-grey peer-placeholder-shown:peer-focus:top-2 peer-placeholder-shown:text-input-grey-secondary peer-placeholder-shown:top-7 peer-placeholder-shown:text-base"
+    class="absolute bg-main-grey w-full  left-6 duration-200 leading-5 text-input-grey text-sm top-0 peer-placeholder-shown:peer-focus:text-sm peer-placeholder-shown:peer-focus:text-input-grey peer-placeholder-shown:peer-focus:top-0 peer-placeholder-shown:text-input-grey-secondary peer-placeholder-shown:top-7 peer-placeholder-shown:text-base"
     >{{$text}}</label>
 </div>
 
+{{-- <p>sdla </p> --}}
 @error($dotNotation)
     <p class="text-main-red mt-2 text-xs">
         {{$message}}

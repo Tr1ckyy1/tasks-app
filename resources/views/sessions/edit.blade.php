@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="w-1/3 mx-auto space-y-4 h-full flex flex-col">
+    <section class="w-1/3 mx-auto space-y-4 h-full py-10 flex flex-col">
         <h1 class="font-bold uppercase text-3xl text-center">
             {{((__('profile.profile')))}}
         </h1>
@@ -30,18 +30,21 @@
                         <img id="img-profile_image" src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('basic-images/basic-avatar.png')}}" class="w-full h-full rounded-full"/>
                     </div>
                     <x-form.upload-input name="profile_image" :text="__('profile.upload_profile')"/>
-                    <button id="delete-profile_image" type="button" onclick="removeImage('profile_image')" class="hidden uppercase font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
+                    <button id="delete-profile_image" type="button" onclick="removeImage('profile_image')" class="hidden uppercase text-input-grey-secondary font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="h-32 w-32">
                         <img id="img-cover_image" src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('basic-images/intersect.png')}}" class="w-full h-full rounded-l-xl"/>
                     </div>
                     <x-form.upload-input name="cover_image" :text="__('profile.upload_cover')"/>
-                    <button id="delete-cover_image" type="button" onclick="removeImage('cover_image')" class="hidden uppercase font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
+                    <button id="delete-cover_image" type="button" onclick="removeImage('cover_image')" class="hidden uppercase text-input-grey-secondary font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
                 </div>
             </div>
     
-            <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100 outline-none">{{__('profile.change_button')}}</button>
+            <div class="pb-14">
+
+                <button class="w-full bg-main-blue text-white font-bold uppercase rounded-[14px] p-5 hover:bg-main-blue/95 duration-100 outline-none">{{__('profile.change_button')}}</button>
+            </div>
     </form>
         
     </section>
