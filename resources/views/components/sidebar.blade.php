@@ -2,7 +2,7 @@
     <section class="flex flex-col items-center gap-20">
                
         <header>
-            <img src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('basic-images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
+            <img src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) . '?' . now()->timestamp : asset('basic-images/basic-avatar.png')}}" class="w-16 h-16 rounded-full"/>
         </header>
         <main>
             <ul class="space-y-4">

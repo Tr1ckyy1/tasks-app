@@ -15,7 +15,7 @@
         <div class="flex h-full items-center gap-20 px-10 py-5">
 
             <div class="flex-1 h-[740px]">
-                <img src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('basic-images/intersect.png')}}" class="rounded-l-xl h-full"/>
+                <img src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') . '?' . now()->timestamp : asset('basic-images/intersect.png')}}" class="rounded-l-xl h-full"/>
             </div>
             
             <div class="gap-10 relative flex-1 h-[740px] flex flex-col justify-center">

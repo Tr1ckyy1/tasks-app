@@ -27,14 +27,14 @@
                 <h1 class="text-center uppercase text-lg mt-14">{{__('profile.change_photos')}}</h1>
                 <div class="flex items-center gap-4">
                     <div class="h-32 w-32">
-                        <img id="img-profile_image" src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) : asset('basic-images/basic-avatar.png')}}" class="w-full h-full rounded-full"/>
+                        <img id="img-profile_image" src="{{auth()->user()->profile_image ?  asset('storage/images/' . auth()->user()->profile_image) . '?' . now()->timestamp : asset('basic-images/basic-avatar.png')}}" class="w-full h-full rounded-full"/>
                     </div>
                     <x-form.upload-input name="profile_image" :text="__('profile.upload_profile')"/>
                     <button id="delete-profile_image" type="button" onclick="removeImage('profile_image')" class="hidden uppercase text-input-grey-secondary font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="h-32 w-32">
-                        <img id="img-cover_image" src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') : asset('basic-images/intersect.png')}}" class="w-full h-full rounded-l-xl"/>
+                        <img id="img-cover_image" src="{{file_exists(public_path('storage/images/cover_image.png')) ? asset('storage/images/cover_image.png') . '?' . now()->timestamp : asset('basic-images/intersect.png')}}" class="w-full h-full rounded-l-xl"/>
                     </div>
                     <x-form.upload-input name="cover_image" :text="__('profile.upload_cover')"/>
                     <button id="delete-cover_image" type="button" onclick="removeImage('cover_image')" class="hidden uppercase text-input-grey-secondary font-semibold tracking-wide hover:underline duration-100">{{__('profile.delete')}}</button>
