@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreLoginRequest;
 use App\Http\Requests\StoreProfileRequest;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -12,7 +13,7 @@ use Illuminate\Validation\ValidationException;
 class SessionsController extends Controller
 {
     
-    public function login(StoreLoginRequest $request)
+    public function login(StoreLoginRequest $request):RedirectResponse
     {
 
         $attributes = $request->validated();
@@ -27,7 +28,7 @@ class SessionsController extends Controller
     }
 
 
-    public function update(StoreProfileRequest $request, User $user)
+    public function update(StoreProfileRequest $request, User $user): RedirectResponse
     {
         $attributes = $request->validated();
 
@@ -61,7 +62,7 @@ class SessionsController extends Controller
     }
     
 
-    public function logout()
+    public function logout(): RedirectResponse
     {
         auth()->logout();
         return redirect(route('sessions.create'));

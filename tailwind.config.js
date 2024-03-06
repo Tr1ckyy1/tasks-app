@@ -7,6 +7,9 @@ export default {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
     theme: {
+        fontFamily: {
+            sans: "Helvetica",
+        },
         extend: {
             height: {
                 screen: "100dvh",
