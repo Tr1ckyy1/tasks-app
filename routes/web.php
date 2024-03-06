@@ -17,24 +17,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/localization/{locale}',LocalizationController::class)->name('localization');
+Route::get('/localization/{locale}', LocalizationController::class)->name('localization');
 
-Route::middleware(Localization::class)->group(function(){
-    Route::view("/",'sessions.create')->middleware('guest')->name('sessions.create');
-    Route::view("/user",'sessions.edit')->middleware('auth')->name('sessions.edit_profile');
-    Route::patch("/user/{user}",[SessionsController::class,'update'])->middleware('auth')->name('sessions.update');
-    Route::post("/login",[SessionsController::class,'login'])->middleware('guest')->name('sessions.login');
-    Route::post("/logout",[SessionsController::class,'logout'])->middleware('auth')->name('sessions.logout');
-    Route::post("/logout",[SessionsController::class,'logout'])->middleware('auth')->name('sessions.logout');
+Route::middleware(Localization::class)->group(function () {
+	Route::view('/', 'sessions.create')->middleware('guest')->name('sessions.create');
+	Route::view('/user', 'sessions.edit')->middleware('auth')->name('sessions.edit_profile');
+	Route::patch('/user/{user}', [SessionsController::class, 'update'])->middleware('auth')->name('sessions.update');
+	Route::post('/login', [SessionsController::class, 'login'])->middleware('guest')->name('sessions.login');
+	Route::post('/logout', [SessionsController::class, 'logout'])->middleware('auth')->name('sessions.logout');
+	Route::post('/logout', [SessionsController::class, 'logout'])->middleware('auth')->name('sessions.logout');
 
-Route::middleware('auth')->prefix('/tasks')->group(function(){
-        Route::get('',[TaskController::class,'index'])->name("tasks.index");
-        Route::view('/create','tasks.create')->name("tasks.create");
-        Route::post('',[TaskController::class,'store'])->name("tasks.store");
-        Route::get('/{task}',[TaskController::class,'show'])->name("tasks.show");
-        Route::get('/{task}/edit',[TaskController::class,'edit'])->name('tasks.edit');
-        Route::patch('{task}',[TaskController::class,'update'])->name('tasks.update');
-        Route::delete('/delete-overdue',[TaskController::class,'destroyAll'])->name("tasks.destroy_all");
-        Route::delete('/{task}',[TaskController::class,'destroy'])->name("tasks.destroy");
-    });
+	Route::middleware('auth')->prefix('/tasks')->group(function () {
+		Route::get('', [TaskController::class, 'index'])->name('tasks.index');
+		Route::view('/create', 'tasks.create')->name('tasks.create');
+		Route::post('', [TaskController::class, 'store'])->name('tasks.store');
+		Route::get('/{task}', [TaskController::class, 'show'])->name('tasks.show');
+		Route::get('/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+		Route::patch('{task}', [TaskController::class, 'update'])->name('tasks.update');
+		Route::delete('/delete-overdue', [TaskController::class, 'destroyAll'])->name('tasks.destroy_all');
+		Route::delete('/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+	});
 });
