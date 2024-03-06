@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 
 class LocalizationController extends Controller
 {
-    public function __invoke($locale)
-    {
-        if(!in_array($locale,['en','ka'])){
-            abort(400);
-        }
+	public function __invoke($locale): RedirectResponse
+	{
+		if (!in_array($locale, ['en', 'ka'])) {
+			abort(400);
+		}
 
-       session(['localization' => $locale]);
+		session(['localization' => $locale]);
 
-       return back();
-    }
+		return back();
+	}
 }

@@ -8,11 +8,12 @@ use Spatie\Translatable\HasTranslations;
 
 class Task extends Model
 {
-    use HasFactory, HasTranslations;
+	use HasFactory, HasTranslations;
 
-    public $translatable = ['name','description'];
+	public $translatable = ['name', 'description'];
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+	public function user()
+	{
+		return $this->belongsTo(User::class);
+	}
 }

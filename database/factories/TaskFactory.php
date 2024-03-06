@@ -11,22 +11,20 @@ use Faker\Factory as GeorgianFactory;
  */
 class TaskFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-
-     
-    public function definition(): array
-    {
-        return [
-            'name' => ['en' => $this->faker->text(), 'ka' => GeorgianFactory::create('ka_GE')->realText(10)
-        ],
-            'user_id' => User::factory(),
-            'description' => ['en' => $this->faker->sentence(), 'ka' => GeorgianFactory::create('ka_GE')->realText(10)
-        ],
-            'due_date' => $this->faker->dateTime()
-        ];
-    }
+	/**
+	 * Define the model's default state.
+	 *
+	 * @return array<string, mixed>
+	 */
+	public function definition(): array
+	{
+		return [
+			'name' => ['en' => $this->faker->text(), 'ka' => GeorgianFactory::create('ka_GE')->realText(10),
+			],
+			'user_id'     => User::factory(),
+			'description' => ['en' => $this->faker->sentence(), 'ka' => GeorgianFactory::create('ka_GE')->realText(10),
+			],
+			'due_date' => $this->faker->dateTime(),
+		];
+	}
 }
