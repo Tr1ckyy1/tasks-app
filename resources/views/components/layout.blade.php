@@ -10,6 +10,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Helvetica';
+            src: url({{ asset('fonts/Helvetica.ttf') }});
+        }
+        * {
+            font-family: 'Helvetica';
+        }
+    </style>
     </head>
     <body {{$attributes(['class' => 'items-center gap-14  px-10 py-6 flex h-screen'])}} >
         <x-flash/>
