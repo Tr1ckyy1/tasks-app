@@ -29,7 +29,7 @@ Make sure you have the following software installed on your system:
 
 The Task Manager Application is built using the following technologies:
 
--   Laravel 8.0 - Back-end framework
+-   Laravel 10.0 - Back-end framework
 -   Spatie Translatable - Language translation
 
 ### Getting Started
